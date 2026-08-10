@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Logo from './Logo'
 import { NAV_ITEMS } from '../config/navItems'
-
+import CallToActionButton from './CallToActionButton'
 
 export default function NavbarImmanuelAG() {
   const [open, setOpen] = useState(false)
@@ -49,20 +49,18 @@ export default function NavbarImmanuelAG() {
           {/* Logo */}
           <a href="/" className="group flex items-center gap-2.5" aria-label="Home">
             <Logo />
-            <span className="font-display font-bold text-base tracking-wide text-white transition-opacity duration-300 group-hover:opacity-85">
-              Charity 4 A Course
-            </span>
+  
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8 items-center">
+          <div className="hidden md:flex gap-8 items-center min-h-[100px]">
             {NAV_ITEMS.map(({ page, href }) => (
               <a
                 key={href}
                 href={href}
                 onClick={(e) => handleNavClick(href, e)}
-                className={`font-body text-sm font-semibold transition-colors duration-200 ${
-                  activePage === page ? 'text-ink-50' : 'text-white/90 hover:text-white'
+                className={`font-body text-spacing-12 font-semibold transition-all duration-slow ${
+                  activePage === page ? 'text-ink-50 p-4 border border-black' : 'text-white/90 hover:text-white hover:font-bold'
                 } ${activePage === page ? 'underline underline-offset-4 decoration-2' : ''}`}
               >
                 {page}
@@ -70,17 +68,10 @@ export default function NavbarImmanuelAG() {
             ))}
           </div>
 
-          {/* CTA — square white block, sharp edges per theme */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#give"
-              onClick={(e) => handleNavClick('/give', e)}
-              className="font-body font-bold text-sm text-teal-500 bg-white hover:bg-grey-100 px-6 py-2.5 rounded-none transition-colors duration-200"
-            >
-              Tithe + Give
-            </a>
-          </div>
-
+          {/* CTA */}
+            <div className="hidden md:flex items-center gap-3">
+            <CallToActionButton variant='primary' text='Support Us'/>
+            </div>
           {/* hamburger */}
           <button
             type="button"
@@ -125,13 +116,8 @@ export default function NavbarImmanuelAG() {
               {page}
             </a>
           ))}
-          <a
-            href="#give"
-            onClick={(e) => handleNavClick('/give', e)}
-            className="font-body font-bold text-sm text-teal-500 bg-white px-8 py-3 rounded-btn mt-4"
-          >
-            Tithe + Give
-          </a>
+          {/* CTA */}
+            <CallToActionButton variant='soft' text='Support Us'/>
         </div>
       </div>
     </>
