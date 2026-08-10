@@ -231,10 +231,22 @@
 }
 
 @layer components {
-  .hero-gradient-text{
-    background-image: var(--gradient-hero);
-    background-clip:  text;
-    color: transparent;
-    font-size: 15dvw;
-  }
+.hero-gradient-text { color: var(--color-brand-white);
+   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.55), 0 12px 40px rgba(0, 0, 0, 0.45); font-family: var(--font-display);
+   font-weight: var(--font-weight-bold); letter-spacing: var(--tracking-tight); 
+  line-height: var(--leading-tight); 
+  font-size: clamp(2.75rem, 7vw, 6rem);
+  text-align: center; margin: 0; }
+  /* Optional accent variant for use over a *solid* dark section (no busy pattern behind it) where the teal gradient clip reads fine. */
+.hero-gradient-text--accent { 
+  background-image: var(--gradient-teal-accent); background-clip: text; 
+  color: transparent;
+} 
+.hero-subheading { color: var(--color-grey-100); 
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4); 
+  font-family: var(--font-body); font-size: var(--text-lg);
+  line-height: var(--leading-normal); text-align: center;
+  max-width: 42rem;
+}
+      
 }
