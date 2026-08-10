@@ -47,3 +47,73 @@
 
   --container-brand: 1200px;
 }
+@layer base {
+  body {
+    background: var(--color-teal-950);   
+    color: var(--color-grey-200);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-brand-white);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: var(--color-teal-300);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: var(--color-teal-200);
+    font-weight: bold;
+    
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-teal-400);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-teal-500);
+    color: var(--color-brand-white);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-teal-900);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-teal-700);
+    border-radius: var(--radius-btn);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-teal-600);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+}
