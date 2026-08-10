@@ -1,113 +1,50 @@
 /* ==========================================================================
-   Charity 4 A Course Kenya — Tailwind v4 design tokens
+   Reference theme: immanuelag.com
+   Saturated teal header bar, stark black card blocks, light grey
+   neutrals, mostly square edges — brutalist-leaning contrast.
    ========================================================================== */
 @import "tailwindcss";
+
 @theme {
-  /* ---- Brand colors ------------------------------------------------- */
-  --color-ink-50:   #EEF3F6;
-  --color-ink-100:  #D6E1E9;
-  --color-ink-200:  #AEC3D2;
-  --color-ink-300:  #7C9DB4;
-  --color-ink-400:  #4A7695;
-  --color-ink-500:  #24506F;  /* == --ink-soft in demo (hover/gradient tone) */
-  --color-ink-600:  #16324A;  /* == --ink in demo — primary brand ink */
-  --color-ink-700:  #122A3E;
-  --color-ink-800:  #0D2233;  /* == cta-band hover tone in demo */
-  --color-ink-900:  #091A26;
-  --color-ink-950:  #05101A;
+  /* ---- Teal (primary brand / header / links) ------------------------- */
+  --color-teal-50:  #E7FBF8;
+  --color-teal-100: #C3F3EB;
+  --color-teal-200: #86E6D6;
+  --color-teal-300: #4CD4BF;
+  --color-teal-400: #23C4AC;
+  --color-teal-500: #14B8A6;  /* == header bar / accent sampled — matches tailwind teal-500 */
+  --color-teal-600: #0F9488;
+  --color-teal-700: #0C766D;
+  --color-teal-800: #0A5B54;
+  --color-teal-900: #073B37;
+  --color-teal-950: #04211E;
 
-  --color-terracotta-50:  #FCF0E8;
-  --color-terracotta-100: #F7DBC5;
-  --color-terracotta-200: #EFB78B;
-  --color-terracotta-300: #DC8C54;
-  --color-terracotta-400: #C36A2F;
-  --color-terracotta-500: #A9501C;  /* --terracotta in demo — primary accent/CTA */
-  --color-terracotta-600: #7A3712;  /*  --clay in demo — hover state */
-  --color-terracotta-700: #602B0E;
-  --color-terracotta-800: #481F09;
-  --color-terracotta-900: #301405;
-  --color-terracotta-950: #1C0B02;
+  /* ---- Ink / black (card blocks, high-contrast panels) ------------------ */
+  --color-ink-0:   #000000;
+  --color-ink-50:  #0A0A0A;   /* == black service-card bg sampled */
+  --color-ink-100: #1A1A1A;
+  --color-ink-200: #2E2E2E;
 
-  --color-ivory-50:  #FFFFFF;
-  --color-ivory-100: #FBF9F5;
-  --color-ivory-200: #F6F1E7;  /* light section bg */
-  --color-ivory-300: #ECE2CE;
-  --color-ivory-400: #E0D0AF;
-  --color-ivory-500: #D9AE82;  /*  warm mid-tone / card fill */
-  --color-ivory-600: #C08F5C;
-  --color-ivory-700: #9A6E3F;
-  --color-ivory-800: #6E4E2C;
-  --color-ivory-900: #43301B;
+  /* ---- Neutral grey (light section backgrounds) --------------------------- */
+  --color-grey-100: #F2F2F2;
+  --color-grey-200: #DCDCDC;  /* == light section bg sampled */
+  --color-grey-400: #A6A6A6;
+  --color-grey-600: #6B6B6B;
 
-  --color-charcoal-50:  #F2F0EE;
-  --color-charcoal-100: #D8D2CB;
-  --color-charcoal-200: #B0A69A;
-  --color-charcoal-300: #887A69;
-  --color-charcoal-400: #5C4E3F;
-  --color-charcoal-500: #241C15;  /* body text on light bg */
-  --color-charcoal-600: #1D1611;
-  --color-charcoal-700: #16110D;
-  --color-charcoal-800: #0F0B08;
-  --color-charcoal-900: #080604;
+  /* ---- Flat aliases ----------------------------------------------------------- */
+  --color-brand-teal:  #14B8A6;
+  --color-brand-black: #0A0A0A;
+  --color-brand-grey:  #DCDCDC;
+  --color-brand-white: #FFFFFF;
+  --color-brand-line:  rgba(0,0,0,0.12);
 
-  --color-brand-ink:        #16324A;
-  --color-brand-ink-soft:   #24506F;
-  --color-brand-terracotta: #A9501C;
-  --color-brand-clay:       #7A3712;
-  --color-brand-ivory:      #F6F1E7;
-  --color-brand-sand:       #D9AE82;
-  --color-brand-charcoal:   #241C15;
-  --color-brand-line:       rgba(36,28,21,0.12);
-
-  /* ---- Typography ----------------------------------------------------- */
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  /* ---- Typography --------------------------------------------------------------- */
+  --font-display: "Montserrat", "Helvetica Neue", system-ui, sans-serif;
   --font-body:    "Inter", system-ui, sans-serif;
-  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
 
-  /* ---- Radius ----------------------------------------------------------
-    shared --radius (18px) on cards/media, 100px "pill" radius on buttons/tags - rounded-full. */
-  --radius-brand:   18px;
-  --radius-pill:    100px;
+  /* ---- Radius: mostly sharp, one soft CTA button ------------------------------ */
+  --radius-none: 0px;
+  --radius-btn:  8px;   /* only the white "Plan your Visit"-style buttons round */
 
-  /* ---- Layout ----------------------------------------------------------
-    --container (max-width wrapper) */
-  --container-brand: 1120px;
-
-  /* ---- Shadows ----------------------------------------------------------- 
-    card shadow  */
-  --shadow-prog-card: 0 18px 40px -20px rgba(22, 50, 74, 0.35);
-
-  /* ---- Letter spacing ------------ */
-  --tracking-eyebrow: 0.14em;
-  --tracking-label:   0.1em;
-}
-
-
-
-@layer base {
-  body {
-    background: var(--color-bg);
-    color: var(--color-ink);
-    font-family: var(--font-sans);
-  }
-body,html{
-   overflow-x: hidden;
-  width: 100%;
-}
-  ::selection {
-    background: var(--color-primary);
-    color: var(--color-primary-ink);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-}
-
-@layer components {
- 
+  --container-brand: 1200px;
 }
