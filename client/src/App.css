@@ -36,23 +36,128 @@
   --color-brand-grey:  #DCDCDC;
   --color-brand-white: #FFFFFF;
   --color-brand-line:  rgba(0,0,0,0.12);
+  --color-brand-line-dark: rgba(255,255,255,0.12);   /* hairline on dark sections */
 
-  /* ---- Typography --------------------------------------------------------------- */
+  /* ---- Semantic status colors (form validation, alerts, donation states) ----- */
+  --color-success:  #14B8A6;   /* reuses teal-500 — "donation confirmed" */
+  --color-warning:  #E3A008;
+  --color-error:    #E5484D;
+  --color-info:     #23C4AC;
+
+  /* ---- Typography ------------------------------------------------------------- */
   --font-display: "Montserrat", "Helvetica Neue", system-ui, sans-serif;
   --font-body:    "Inter", system-ui, sans-serif;
 
-  /* ---- Radius:  sharp, soft CTA button ------------------------------ */
+  /* Type scale — Major Third-ish, tuned for a hero-led charity page */
+  --text-xs:    0.75rem;   /* 12px — fine print, disclaimers */
+  --text-sm:    0.875rem;  /* 14px — captions, meta */
+  --text-base:  1rem;      /* 16px — body copy */
+  --text-lg:    1.125rem;  /* 18px — lead paragraph */
+  --text-xl:    1.375rem;  /* 22px — small headings */
+  --text-2xl:   1.75rem;   /* 28px — section headings */
+  --text-3xl:   2.25rem;   /* 36px — page headings */
+  --text-4xl:   3rem;      /* 48px — hero headline (mobile) */
+  --text-5xl:   4rem;      /* 64px — hero headline (desktop) */
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.35;
+  --leading-normal: 1.6;    /* matches body line-height below */
+  --leading-loose:  1.85;
+
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --tracking-tight: -0.01em;  /* headings */
+  --tracking-wide:   0.04em;  /* small caps / eyebrow labels */
+
+  /* ---- Spacing scale — 4px base, extends Tailwind's default ------------------ */
+  --spacing-0:   0px;
+  --spacing-px:  1px;
+  --spacing-1:   0.25rem;  /* 4px */
+  --spacing-2:   0.5rem;   /* 8px */
+  --spacing-3:   0.75rem;  /* 12px */
+  --spacing-4:   1rem;     /* 16px */
+  --spacing-5:   1.25rem;  /* 20px */
+  --spacing-6:   1.5rem;   /* 24px */
+  --spacing-8:   2rem;     /* 32px */
+  --spacing-10:  2.5rem;   /* 40px */
+  --spacing-12:  3rem;     /* 48px */
+  --spacing-16:  4rem;     /* 64px — section padding (mobile) */
+  --spacing-20:  5rem;     /* 80px */
+  --spacing-24:  6rem;     /* 96px — section padding (desktop) */
+  --spacing-32:  8rem;     /* 128px — hero padding */
+
+  /* ---- Radius: sharp, soft CTA button ------------------------------ */
   --radius-none: 0px;
-  --radius-btn:  8px;   /*buttons round */
+  --radius-sm:   4px;
+  --radius-btn:  8px;   /* buttons round */
+  --radius-md:   12px;  /* cards */
+  --radius-lg:   20px;  /* feature panels */
+  --radius-full: 9999px; /* pills, avatars, progress bars */
+
+  /* ---- Borders ------------------------------------------------------ */
+  --border-width-thin:  1px;
+  --border-width-base:  2px;   /* outline button border */
+  --border-width-thick: 3px;
+
+  /* ---- Shadows — soft, cool-toned for a dark teal canvas ------------- */
+  --shadow-sm:    0 1px 2px rgba(0,0,0,0.24);
+  --shadow-md:    0 4px 12px rgba(0,0,0,0.28);
+  --shadow-lg:    0 12px 32px rgba(0,0,0,0.32);
+  --shadow-xl:    0 24px 64px rgba(0,0,0,0.4);
+  --shadow-teal-glow: 0 0 32px rgba(20,184,166,0.35);  /* CTA / donate button hover */
+  --shadow-card-inset: inset 0 1px 0 rgba(255,255,255,0.06);
+
+  /* ---- Gradients — for heroes, donation progress bars, CTA panels --- */
+  --gradient-hero:        linear-gradient(160deg, var(--color-teal-950) 0%, var(--color-teal-900) 45%, var(--color-teal-800) 100%);
+  --gradient-teal-accent: linear-gradient(135deg, var(--color-teal-400) 0%, var(--color-teal-600) 100%);
+  --gradient-progress:    linear-gradient(90deg, var(--color-teal-300) 0%, var(--color-teal-500) 100%);
+  --gradient-ink-fade:    linear-gradient(180deg, transparent 0%, var(--color-ink-50) 100%); /* image-to-card fade */
+  --gradient-glass:       linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+
+  /* ---- Motion — durations & easing -------------------------------- */
+  --duration-fast:   150ms;
+  --duration-base:   200ms;
+  --duration-slow:   350ms;
+  --duration-slower: 600ms;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1);   /* donation-tier select, playful CTAs */
+
+  /* ---- Opacity steps — overlays, disabled states, scrims ----------- */
+  --opacity-disabled: 0.45;
+  --opacity-hover:    0.85;
+  --opacity-scrim:    0.6;   /* dark overlay on hero imagery for text contrast */
+
+  /* ---- Z-index scale ------------------------------------------------ */
+  --z-base:     0;
+  --z-dropdown: 10;
+  --z-sticky:   20;   /* sticky header */
+  --z-overlay:  30;   /* modal backdrop */
+  --z-modal:    40;
+  --z-toast:    50;   /* donation confirmation toast */
+
+  /* ---- Breakpoints (Tailwind v4 container-query aware) -------------- */
+  --breakpoint-sm:  640px;
+  --breakpoint-md:  768px;
+  --breakpoint-lg:  1024px;
+  --breakpoint-xl:  1280px;
+  --breakpoint-2xl: 1536px;
 
   --container-brand: 1200px;
 }
+
 @layer base {
   body {
-    background: var(--color-teal-950);   
+    background: var(--color-teal-950);
     color: var(--color-grey-200);
     font-family: var(--font-body);
-    line-height: 1.6;
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
     -webkit-font-smoothing: antialiased;
   }
 
@@ -64,19 +169,29 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--color-brand-white);
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  h4 { font-size: var(--text-xl); }
+
+  @media (min-width: 1024px) {
+    h1 { font-size: var(--text-5xl); }
   }
 
   a {
     color: var(--color-teal-300);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--duration-base) var(--ease-standard);
   }
   a:hover {
     color: var(--color-teal-200);
     font-weight: bold;
-    
+
   }
 
   a:focus-visible,
@@ -116,4 +231,10 @@
 }
 
 @layer components {
+  .hero-gradient-text{
+    background-image: var(--gradient-hero);
+    background-clip:  text;
+    color: transparent;
+    font-size: 15dvw;
+  }
 }
