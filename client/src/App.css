@@ -1,7 +1,7 @@
 /* ==========================================================================
    Charity 4 A Course Kenya — Tailwind v4 design tokens
    ========================================================================== */
-
+@import "tailwindcss";
 @theme {
   /* ---- Brand colors ------------------------------------------------- */
   --color-ink-50:   #EEF3F6;
@@ -21,8 +21,8 @@
   --color-terracotta-200: #EFB78B;
   --color-terracotta-300: #DC8C54;
   --color-terracotta-400: #C36A2F;
-  --color-terracotta-500: #A9501C;  /* == --terracotta in demo — primary accent/CTA */
-  --color-terracotta-600: #7A3712;  /* == --clay in demo — hover state */
+  --color-terracotta-500: #A9501C;  /* --terracotta in demo — primary accent/CTA */
+  --color-terracotta-600: #7A3712;  /*  --clay in demo — hover state */
   --color-terracotta-700: #602B0E;
   --color-terracotta-800: #481F09;
   --color-terracotta-900: #301405;
@@ -82,3 +82,32 @@
   --tracking-label:   0.1em;
 }
 
+
+
+@layer base {
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+body,html{
+   overflow-x: hidden;
+  width: 100%;
+}
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+ 
+}
