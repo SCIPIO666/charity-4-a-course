@@ -1,8 +1,7 @@
-/* ==========================================================================
-   Reference theme: immanuelag.com
-   Saturated teal header bar, stark black card blocks, light grey
-   neutrals, mostly square edges — brutalist-leaning contrast.
-   ========================================================================== */
+/*
+ theme inspired by : immanuelag.com
+ charity for  a course tailwind token system*/
+
 @import "tailwindcss";
 
 @theme {
@@ -12,7 +11,7 @@
   --color-teal-200: #86E6D6;
   --color-teal-300: #4CD4BF;
   --color-teal-400: #23C4AC;
-  --color-teal-500: #14B8A6;  /* == header bar / accent sampled — matches tailwind teal-500 */
+  --color-teal-500: #14B8A6;  /*  header bar / accent teal-500 */
   --color-teal-600: #0F9488;
   --color-teal-700: #0C766D;
   --color-teal-800: #0A5B54;
@@ -21,13 +20,13 @@
 
   /* ---- Ink / black (card blocks, high-contrast panels) ------------------ */
   --color-ink-0:   #000000;
-  --color-ink-50:  #0A0A0A;   /* == black service-card bg sampled */
+  --color-ink-50:  #0A0A0A;   /*  black service-card bg */
   --color-ink-100: #1A1A1A;
   --color-ink-200: #2E2E2E;
 
   /* ---- Neutral grey (light section backgrounds) --------------------------- */
   --color-grey-100: #F2F2F2;
-  --color-grey-200: #DCDCDC;  /* == light section bg sampled */
+  --color-grey-200: #DCDCDC;  /*  light section bg  */
   --color-grey-400: #A6A6A6;
   --color-grey-600: #6B6B6B;
 
@@ -42,9 +41,9 @@
   --font-display: "Montserrat", "Helvetica Neue", system-ui, sans-serif;
   --font-body:    "Inter", system-ui, sans-serif;
 
-  /* ---- Radius: mostly sharp, one soft CTA button ------------------------------ */
+  /* ---- Radius:  sharp, soft CTA button ------------------------------ */
   --radius-none: 0px;
-  --radius-btn:  8px;   /* only the white "Plan your Visit"-style buttons round */
+  --radius-btn:  8px;   /*buttons round */
 
   --container-brand: 1200px;
 }
