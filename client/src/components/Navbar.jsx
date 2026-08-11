@@ -56,10 +56,10 @@ const handleNavClick = (href, e) => {
                 key={href}
                 href={href}
                 onClick={(e) => handleNavClick(href, e)}
-                className={`font-body text-spacing-12 font-semibold transition-all duration-slow ${
+                className={`font-body text-spacing-12 font-semibold transition-colors duration-slow ${
                     isActive(href)
                     ? 'text-ink-50 p-4 border border-black underline underline-offset-4 decoration-2'
-                    : 'text-white/90 hover:text-white hover:font-bold'
+                    : 'text-white/90 hover:text-ink-50 '
                 }`}
                 >
                 {page}

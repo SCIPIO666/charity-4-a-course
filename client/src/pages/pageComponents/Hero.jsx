@@ -1,24 +1,82 @@
 import React from 'react'
-import { pattern3 } from '../../data/SvgPatterns' 
+import { pattern3 } from '../../data/SvgPatterns'
 import CallToActionButton from '../../components/CallToActionButton'
-function Hero({imageUrl,heading='HEADING',tagline=''}) {
+
+function Hero({
+  imageUrl,
+  heading = 'HEADING',
+  tagline = '',
+  variant = 'outline',
+  text = '',
+}) {
   return (
-    <div className='min-h-screen bg-[#04211E] relative overflow-hidden'>
+    <section className="relative min-h-screen overflow-hidden bg-[#04211E]">
 
-        <div 
-            className="absolute inset-0 w-full h-full"
-            dangerouslySetInnerHTML={{ __html: pattern3 }}
-        />        
-        <div className="relative z-10 max-w-[85%] m-auto">
-            <h2 className='hero-gradient-text align-text-left'>{heading}</h2>
-            <div className='m-auto w-[50%] flex align-middle justify-between gap-8 flex-col'>
-                <p className='font-bold'>{tagline}</p>
-                <CallToActionButton variant='soft' />
-            </div>
+      {/* background */}
+      <div
+        className="absolute inset-0 h-full w-full"
+        dangerouslySetInnerHTML={{ __html: pattern3 }}
+      />
+
+      {/*content */}
+      <div className="
+        relative z-10
+        flex min-h-screen
+        items-center justify-center
+        px-6 py-24
+      ">
+        <div className="
+          flex w-full max-w-5xl
+          flex-col
+          items-center
+          justify-center
+          text-center
+        ">
+
+          {/* Heading */}
+          <h2 className="
+            hero-gradient-text
+            w-full
+            text-center
+          ">
+            {heading}
+          </h2>
+
+          {/* tagline*/}
+          <div className="
+            mt-8
+            flex w-full max-w-2xl
+            flex-col
+            items-center
+            justify-center
+            gap-6
+          ">
+
+            {tagline && (
+              <p className="
+                max-w-xl
+                text-center
+                font-bold
+                leading-relaxed
+                text-white
+              ">
+                {tagline}
+              </p>
+            )}
+
+            {text && (
+              <CallToActionButton
+                variant={variant}
+                text={text}
+              />
+            )}
+
+          </div>
 
         </div>
+      </div>
 
-        </div>
+    </section>
   )
 }
 

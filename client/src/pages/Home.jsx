@@ -1,12 +1,16 @@
 import React from 'react'
 import Hero from './pageComponents/Hero'
+import LandingAboutUs from './pageComponents/LandingAboutUs'
 export default function Home() {
   return (
     <>
 <Hero
-  heading='Showing Up, One Community at a Time'
-  tagline='From shared meals to school outreach — Charity 4 A Course meets Kenyan communities where the need is greatest.'
+  variant='outline'
+  text='Support Us'
+  heading='Improving Lives, One Community at a Time'
+  tagline='Responsive, timely outreach to the less fortunate communities'
 />
+<LandingAboutUs/>
 </>
   )
 }
