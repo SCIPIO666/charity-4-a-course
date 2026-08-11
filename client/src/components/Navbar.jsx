@@ -41,7 +41,7 @@ const handleNavClick = (href, e) => {
 
   return (
     <>
-      <header className="sticky top-0 z-20 bg-teal-500">
+      <header className="sticky top-0 z-1000 bg-teal-500 backdrop-blur-md">
         <nav className="w-full flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
           {/* Logo */}
           <a href="/" className="group flex items-center gap-2.5" aria-label="Home">

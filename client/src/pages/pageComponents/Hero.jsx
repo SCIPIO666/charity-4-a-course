@@ -1,5 +1,5 @@
 import React from 'react'
-import { pattern3 } from '../../data/SvgPatterns'
+import { pattern4 } from '../../data/SvgPatterns'
 import CallToActionButton from '../../components/CallToActionButton'
 
 function Hero({
@@ -15,7 +15,7 @@ function Hero({
       {/* background */}
       <div
         className="absolute inset-0 h-full w-full"
-        dangerouslySetInnerHTML={{ __html: pattern3 }}
+        dangerouslySetInnerHTML={{ __html: pattern4 }}
       />
 
       {/*content */}
