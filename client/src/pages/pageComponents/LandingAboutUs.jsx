@@ -191,7 +191,7 @@ export default function LandingAboutUs() {
             className="
               max-w-[430px]
               font-body
-              text-[clamp(0.75rem,1.4vw,1.05rem)]
+              text-[clamp(1rem,1.4vw,1.05rem)]
               leading-relaxed
               text-white
             "
