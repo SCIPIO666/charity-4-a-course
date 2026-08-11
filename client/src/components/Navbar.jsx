@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Logo from './Logo'
 import { NAV_ITEMS } from '../config/navItems'
 import CallToActionButton from './CallToActionButton'
 
-export default function NavbarImmanuelAG() {
+export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [activePage, setActivePage] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     const currentPath = window.location.pathname
@@ -13,11 +15,11 @@ export default function NavbarImmanuelAG() {
     if (active) setActivePage(active.page)
   }, [])
 
-  const handleNavClick = (href, e) => {
-    e.preventDefault()
-    setOpen(false)
-    window.location.href = href
-  }
+const handleNavClick = (href, e) => {
+  e.preventDefault()
+  setOpen(false)
+  navigate(href)
+}
 
   useEffect(() => {
     const handleEscape = (e) => { if (e.key === 'Escape') setOpen(false) }
