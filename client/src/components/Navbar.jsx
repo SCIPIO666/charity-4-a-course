@@ -50,7 +50,7 @@ const handleNavClick = (href, e) => {
         <nav className="w-full flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
           {/* Logo */}
           <a href="/" className="group flex items-center gap-2.5" aria-label="Home">
-            <Logo />
+            <Logo layout="stacked" tone="dark" size={56} />  
   
           </a>
 

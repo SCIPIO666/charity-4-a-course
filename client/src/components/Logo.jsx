@@ -1,29 +1,49 @@
 import React from 'react'
 
+/**
+ * @param {"side"|"stacked"} layout - tagline beside the mark, or centered below it.
+ * @param {"light"|"dark"} tone  white ring / ink ring 
+ * @param {number} size size in px (default 44).
+ */
+export default function Logo({ layout = 'side', tone = 'light', size = 44 }) {
+  const ring = tone === 'light' ? '#FFFFFF' : '#0A0A0A'
+  const four = tone === 'light' ? '#23C4AC' : '#0F9488'
+  const text = tone === 'light' ? 'text-white' : 'text-ink-50'
+  const tagline = tone === 'light' ? 'text-teal-300' : 'text-teal-600'
 
-export default function Logo({
-  showText = true,
-  className = '',
-}) {
+  const stacked = layout === 'stacked'
+
   return (
     <a
       href="/"
-      className={`flex items-center gap-3 shrink-0 ${className}`}
+      className={`flex ${stacked ? 'flex-col items-center text-center' : 'items-center'} gap-3 shrink-0`}
       aria-label="Charity 4 A Course"
     >
-      {/* Logo mark */}
-      <img
-        src=''
-        alt=""
-        className="w-11 h-9 object-contain"
-      />
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 240 240"
+        aria-hidden="true"
+        className="shrink-0"
+      >
+        {/* Two C-brackets — deeper curve (control point pulled to the
+            viewBox edge) + thicker stroke so they read as bold rounded
+            parentheses rather than thin arcs. */}
+        <path d="M 116 26 Q 2 120 116 214" fill="none" stroke={ring} strokeWidth="26" strokeLinecap="round" />
+        <path d="M 124 26 Q 238 120 124 214" fill="none" stroke={ring} strokeWidth="26" strokeLinecap="round" />
 
-      {/* Wordmark */}
-      {showText && (
-        <span className="font-display text-lg font-bold text-white whitespace-nowrap">
-          Charity 4 A Course
-        </span>
-      )}
+        {/* "4" numeral — corners rounded via strokeLinejoin so the
+            diagonal-to-crossbar join isn't a sharp miter. */}
+        <path d="M 128 66 L 90 146 L 154 146" fill="none" stroke={four} strokeWidth="16" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="128" y1="66" x2="128" y2="182" stroke={four} strokeWidth="16" strokeLinecap="round" />
+      </svg>
+
+      <span
+        className={`font-display font-semibold ${text} whitespace-nowrap tracking-wide uppercase text-[11px] leading-tight ${stacked ? '' : 'ml-0.5'}`}
+      >
+        Charity 4 A Course
+        {/* {stacked && <span className={`block ${tagline} text-[9px] tracking-[0.15em] font-medium normal-case mt-0.5`}>Nairobi · Kenya</span>} */}
+      </span>
     </a>
   )
 }
