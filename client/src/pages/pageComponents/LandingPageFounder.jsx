@@ -6,7 +6,7 @@ export default function LandingPageFounder() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-ink-50 pt-12">
 
-      {/* Background split — teal panel dividing the section diagonally */}
+      {/*c diagonal split with curve */}
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 100 100"
