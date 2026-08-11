@@ -2,6 +2,11 @@ import React from 'react'
 import Hero from './pageComponents/Hero'
 export default function Home() {
   return (
-    <Hero heading='Providing Hope and Healing' tagline='he Nashville Children’s Alliance supports kids who have been abused or exposed to violence. '/>
+    <>
+<Hero
+  heading='Showing Up, One Community at a Time'
+  tagline='From shared meals to school outreach — Charity 4 A Course meets Kenyan communities where the need is greatest.'
+/>
+</>
   )
 }

@@ -236,9 +236,10 @@
    font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight); 
   line-height: var(--leading-tight); 
-  font-size: clamp(2.75rem, 7vw, 6rem);
+  font-size: clamp(3.75rem, 8vw, 7rem);
   text-align: center;
    margin: 0;
+   margin-bottom: 12px;
    }
   /* accent variant*/
 .hero-gradient-text--accent { 

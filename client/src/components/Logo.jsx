@@ -9,7 +9,6 @@ export default function Logo({ layout = 'side', tone = 'light', size = 44 }) {
   const ring = tone === 'light' ? '#FFFFFF' : '#0A0A0A'
   const four = tone === 'light' ? '#23C4AC' : '#0F9488'
   const text = tone === 'light' ? 'text-white' : 'text-ink-50'
-  const tagline = tone === 'light' ? 'text-teal-300' : 'text-teal-600'
 
   const stacked = layout === 'stacked'
 
@@ -42,7 +41,7 @@ export default function Logo({ layout = 'side', tone = 'light', size = 44 }) {
         className={`font-display font-semibold ${text} whitespace-nowrap tracking-wide uppercase text-[11px] leading-tight ${stacked ? '' : 'ml-0.5'}`}
       >
         Charity 4 A Course
-        {/* {stacked && <span className={`block ${tagline} text-[9px] tracking-[0.15em] font-medium normal-case mt-0.5`}>Nairobi · Kenya</span>} */}
+       
       </span>
     </a>
   )

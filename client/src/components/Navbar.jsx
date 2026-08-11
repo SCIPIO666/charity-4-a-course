@@ -1,19 +1,14 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Logo from './Logo'
 import { NAV_ITEMS } from '../config/navItems'
 import CallToActionButton from './CallToActionButton'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [activePage, setActivePage] = useState('')
   const navigate = useNavigate()
-
-  useEffect(() => {
-    const currentPath = window.location.pathname
-    const active = NAV_ITEMS.find(item => item.href === currentPath)
-    if (active) setActivePage(active.page)
-  }, [])
+const location = useLocation()
+const isActive = (href) => location.pathname === href
 
 const handleNavClick = (href, e) => {
   e.preventDefault()
@@ -55,20 +50,22 @@ const handleNavClick = (href, e) => {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8 items-center min-h-[100px]">
+            <div className="hidden md:flex gap-8 items-center min-h-[100px]">
             {NAV_ITEMS.map(({ page, href }) => (
-              <a
+                <a
                 key={href}
                 href={href}
                 onClick={(e) => handleNavClick(href, e)}
                 className={`font-body text-spacing-12 font-semibold transition-all duration-slow ${
-                  activePage === page ? 'text-ink-50 p-4 border border-black' : 'text-white/90 hover:text-white hover:font-bold'
-                } ${activePage === page ? 'underline underline-offset-4 decoration-2' : ''}`}
-              >
+                    isActive(href)
+                    ? 'text-ink-50 p-4 border border-black underline underline-offset-4 decoration-2'
+                    : 'text-white/90 hover:text-white hover:font-bold'
+                }`}
+                >
                 {page}
-              </a>
+                </a>
             ))}
-          </div>
+            </div>
 
           {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
@@ -112,7 +109,7 @@ const handleNavClick = (href, e) => {
               href={href}
               onClick={(e) => handleNavClick(href, e)}
               className={`font-display text-xl uppercase tracking-wide transition-colors duration-200 ${
-                activePage === page ? 'text-teal-400' : 'text-white hover:text-teal-400'
+                isActive(href) ? 'text-teal-400' : 'text-white hover:text-teal-400'
               }`}
             >
               {page}
