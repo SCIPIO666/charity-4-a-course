@@ -1,7 +1,7 @@
 import React from 'react'
 import { pattern4 } from '../../data/SvgPatterns'
 import CallToActionButton from '../../components/CallToActionButton'
-
+import HeroCarousel from './HeroCarousel'
 function Hero({
   imageUrl,
   heading = 'HEADING',
@@ -63,7 +63,7 @@ function Hero({
                 {tagline}
               </p>
             )}
-
+        <HeroCarousel/>
             {text && (
               <CallToActionButton
                 variant={variant}
