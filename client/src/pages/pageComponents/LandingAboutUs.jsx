@@ -13,6 +13,7 @@ export default function LandingAboutUs() {
           left-1/2
           top-28
           md:top-56
+          lg:top-60
           z-30
           -translate-x-1/2
           whitespace-nowrap
