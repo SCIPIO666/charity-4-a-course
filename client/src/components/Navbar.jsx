@@ -78,7 +78,7 @@ const handleNavClick = (href, e) => {
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="md:hidden relative w-8 h-8 shrink-0 text-white z-30"
+            className="md:hidden relative w-8 h-8 shrink-0 text-white z-1001"
           >
             <span className={`absolute left-1/2 top-1/2 block h-0.5 w-6 -translate-x-1/2 bg-current transition duration-300 ${open ? 'rotate-45' : '-translate-y-2'}`} />
             <span className={`absolute left-1/2 top-1/2 block h-0.5 w-6 -translate-x-1/2 bg-current transition duration-300 ${open ? 'opacity-0' : 'opacity-100'}`} />
@@ -98,7 +98,7 @@ const handleNavClick = (href, e) => {
       {/* black panel */}
       <div
         id="mobile-nav"
-        className={`fixed top-0 right-0 h-screen w-4/5 max-w-sm bg-ink-50 rounded-none transition-transform duration-300 ease-in-out md:hidden z-[101] ${
+        className={`fixed top-0 right-0 h-screen w-4/5 max-w-sm bg-ink-50 rounded-none transition-transform duration-300 ease-in-out md:hidden z-[1000] ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

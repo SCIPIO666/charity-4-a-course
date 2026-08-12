@@ -8,7 +8,11 @@ export default function Events() {
         heading='Upcoming  Events'
         pattern='pattern1'
         carousel={false}
-      />      
+        scrollArrow={true}        
+      />   
+      <section className='min-h-screen bg-ink-50 text-brand-white'>
+
+      </section>         
     </div>
   )
 }

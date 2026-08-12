@@ -236,7 +236,7 @@
    font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight); 
   line-height: var(--leading-tight); 
-  font-size: clamp(3.75rem, 5vw, 4rem);
+  font-size: clamp(3.75rem, 6vw, 7rem);
   text-align: center;
    margin: 0;
    margin-bottom: 12px;
@@ -261,5 +261,14 @@
 
 .animate-scroll {
     animation: scroll 25s linear infinite;
-}      
+} 
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}     
 }

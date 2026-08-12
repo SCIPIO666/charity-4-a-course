@@ -8,7 +8,11 @@ export default function Contact() {
         heading='Contact Us'
         pattern='pattern6'
         carousel={false}
+        scrollArrow={true}
       />
+      <section className='min-h-screen bg-ink-50 text-brand-white'>
+
+      </section>
     </div>
   )
 }

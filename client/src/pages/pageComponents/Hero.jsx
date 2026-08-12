@@ -2,12 +2,14 @@ import React from 'react'
 import {pattern1,pattern2,pattern3,pattern4, pattern5,pattern6 } from '../../data/SvgPatterns'
 import CallToActionButton from '../../components/CallToActionButton'
 import HeroCarousel from './HeroCarousel'
+import ScrollArrow from '../../components/ScrollArrow'
 function Hero({
   heading = 'HEADING',
   tagline = '',
   pattern='pattern4',
   variant = 'outline',
   text = '',
+  scrollArrow=false,
   carousel=false
 }) {
 
@@ -84,7 +86,7 @@ function Hero({
                 text={text}
               />
             )}
-
+        {scrollArrow && <ScrollArrow/>}
           </div>
 
         </div>

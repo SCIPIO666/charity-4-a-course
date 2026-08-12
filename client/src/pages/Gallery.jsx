@@ -8,8 +8,11 @@ export default function Gallery() {
         heading='Gallery'
         pattern='pattern3'
         carousel={false}
+        scrollArrow={true}            
       />
-  
+      <section className='min-h-screen bg-ink-50 text-brand-white'>
+
+      </section>  
     </div>
   )
 }

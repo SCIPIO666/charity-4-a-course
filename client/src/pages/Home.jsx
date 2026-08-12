@@ -11,6 +11,7 @@ export default function Home() {
   variant='outline'
   pattern='pattern4'
   text='Support Us'
+  scrollArrow={false} 
   heading='Improving Lives, One Community at a Time'
   carousel={true}
   tagline='Responsive, timely outreach to the less fortunate communities'
