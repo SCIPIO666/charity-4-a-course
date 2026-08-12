@@ -32,7 +32,7 @@ export default function PartnerCarousel({
         Organisations We Work Alongside
       </p>
 
-      {/* Edge gradient overlays for smooth seamless appearance */}
+      {/* edge gradient overlay */}
       <div className="pointer-events-none absolute left-0 top-14 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#04211E] to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-14 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#04211E] to-transparent z-10" />
 
