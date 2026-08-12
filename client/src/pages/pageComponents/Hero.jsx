@@ -46,12 +46,14 @@ function Hero({
     gsap.fromTo(
         letters,
         {
-        y: -100,
+        // y: -100,
+        scale: 0,
         opacity: 0,
         // rotateX: -45,
         },
         {
-        y: 0,
+        // y: 0,
+        scale: 1,
         opacity: 1,
         // rotateX: 0,
         duration: 0.7,
