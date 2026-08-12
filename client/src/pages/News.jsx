@@ -1,7 +1,14 @@
 import React from 'react'
-
+import Hero from './pageComponents/Hero'
 export default function News() {
   return (
-    <div>News</div>
+    <div>
+      <Hero
+        variant='outline'
+        heading='News And Articles'
+        pattern='pattern5'
+        carousel={false}
+      />      
+    </div>
   )
 }

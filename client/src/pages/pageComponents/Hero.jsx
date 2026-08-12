@@ -1,22 +1,31 @@
 import React from 'react'
-import { pattern4 } from '../../data/SvgPatterns'
+import {pattern1,pattern2,pattern3,pattern4, pattern5,pattern6 } from '../../data/SvgPatterns'
 import CallToActionButton from '../../components/CallToActionButton'
 import HeroCarousel from './HeroCarousel'
 function Hero({
-  imageUrl,
   heading = 'HEADING',
   tagline = '',
+  pattern='pattern4',
   variant = 'outline',
   text = '',
   carousel=false
 }) {
+
+     function determinePattern(patternType){
+        if (patternType==='pattern1') return pattern1
+        if (patternType==='pattern2') return pattern2
+        if (patternType==='pattern3') return pattern3
+        if (patternType==='pattern4') return pattern4
+        if (patternType==='pattern5') return pattern5
+        if (patternType==='pattern6') return pattern6
+    }
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#04211E]">
 
       {/* background */}
       <div
         className="absolute inset-0 h-full w-full"
-        dangerouslySetInnerHTML={{ __html: pattern4 }}
+        dangerouslySetInnerHTML={{ __html: determinePattern(pattern) }}
       />
 
       {/*content */}
@@ -32,6 +41,7 @@ function Hero({
           flex-col
           items-center
           justify-center
+          align-center
           text-center
         ">
 
@@ -39,8 +49,10 @@ function Hero({
           <h2 className="
             hero-gradient-text
             w-full
-            text-center
-          ">
+            text-center        
+          "
+
+          >
             {heading}
           </h2>
 

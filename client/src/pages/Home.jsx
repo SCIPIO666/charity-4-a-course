@@ -9,6 +9,7 @@ export default function Home() {
     <>
 <Hero
   variant='outline'
+  pattern='pattern4'
   text='Support Us'
   heading='Improving Lives, One Community at a Time'
   carousel={true}
