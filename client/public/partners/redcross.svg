@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <!-- Red Cross Logo -->
+  <g transform="translate(12, 10)">
+    <!-- Red Cross Symbol -->
+    <rect x="14" y="0" width="12" height="40" rx="2" fill="#EE2A24"/>
+    <rect x="0" y="14" width="40" height="12" rx="2" fill="#EE2A24"/>
+  </g>
+  <!-- Text -->
+  <text x="64" y="31" font-family="'Montserrat', sans-serif" font-weight="700" font-size="16" fill="#FFFFFF" letter-spacing="1">AMERICAN</text>
+  <text x="64" y="47" font-family="'Montserrat', sans-serif" font-weight="800" font-size="16" fill="#EE2A24" letter-spacing="1">RED CROSS</text>
+</svg>

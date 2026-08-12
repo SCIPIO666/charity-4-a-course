@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <!-- UNICEF Logo -->
+  <g transform="translate(10, 8)">
+    <!-- Globe and Parent/Child Silhouette -->
+    <circle cx="22" cy="22" r="18" fill="#00ADEF" opacity="0.15"/>
+    <circle cx="22" cy="22" r="18" stroke="#00ADEF" stroke-width="2"/>
+    <!-- Latitude/Longitude lines -->
+    <ellipse cx="22" cy="22" rx="18" ry="8" stroke="#00ADEF" stroke-width="1.2" stroke-dasharray="3 2"/>
+    <line x1="22" y1="4" x2="22" y2="40" stroke="#00ADEF" stroke-width="1.2"/>
+    <!-- Parent and Child figures -->
+    <circle cx="17" cy="15" r="3.5" fill="#00ADEF"/>
+    <path d="M 17 20 C 13 22, 12 28, 12 34 L 22 34 C 22 28, 21 22, 17 20 Z" fill="#00ADEF"/>
+    <circle cx="27" cy="20" r="2.5" fill="#00ADEF"/>
+    <path d="M 27 24 C 24 25.5, 23 29.5, 23 34 L 31 34 C 31 29.5, 30 25.5, 27 24 Z" fill="#00ADEF"/>
+    <!-- Olive Wreath -->
+    <path d="M 2 22 Q 4 36 22 41 Q 40 36 42 22" stroke="#00ADEF" stroke-width="1.5" fill="none"/>
+  </g>
+  <!-- Text -->
+  <text x="62" y="37" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" letter-spacing="0.5">unicef</text>
+  <text x="63" y="47" font-family="'Inter', sans-serif" font-weight="500" font-size="7.5" fill="#00ADEF" letter-spacing="1.5">FOR EVERY CHILD</text>
+</svg>

@@ -93,34 +93,36 @@ export default function LandingPageImpact() {
   }, [])
 
   return (
-    <section ref={sectionRef} className='min-h-screen min-w-screen bg-[#04211E]'>
-      {/* Heading */}
-      <h2 className="impact-heading font-display p-4 mb-4 text-center relative z-20 font-bold tracking-wide uppercase">
-        Our Impact
-      </h2>
-      
-      <div className='grid justify-between gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
-        {IMPACT_STATS.map((stat) => (
-          <Card
-            key={stat.text}
-            variant="soft"
-            className="impact-card px-4 mx-4 group"
-          >
-            <h3 className="text-5xl text-center font-bold text-ink-50 transition-colors duration-300 group-hover:text-brand-white">
-              <span 
-                className="impact-number"
-                data-target={stat.number}
-              >
-                0
-              </span>
-              <span>{stat.suffix}</span>
-            </h3>
-            <p className="text-center text-ink-50 text-xl transition-colors duration-300 group-hover:text-brand-white">{stat.text}</p>
-          </Card>
-        ))}
+    <section ref={sectionRef} className='py-16 md:py-24 bg-[#04211E] overflow-hidden'>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <h2 className="impact-heading font-display p-4 mb-8 text-center relative z-20 font-bold tracking-wide uppercase text-3xl md:text-4xl text-brand-white">
+          Our Impact
+        </h2>
+        
+        <div className='grid justify-between gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-12'>
+          {IMPACT_STATS.map((stat) => (
+            <Card
+              key={stat.text}
+              variant="soft"
+              className="impact-card px-6 py-8 group text-center border border-teal-500/20 hover:border-teal-400/50 transition-all duration-300"
+            >
+              <h3 className="text-4xl md:text-5xl text-center font-bold text-teal-300 transition-colors duration-300 group-hover:text-brand-white mb-2">
+                <span 
+                  className="impact-number"
+                  data-target={stat.number}
+                >
+                  0
+                </span>
+                <span>{stat.suffix}</span>
+              </h3>
+              <p className="text-center text-grey-200 text-base md:text-lg transition-colors duration-300 group-hover:text-brand-white font-medium">{stat.text}</p>
+            </Card>
+          ))}
+        </div>
       </div>
       
-      {/* partner / organisation marquee — placeholder */}
+      {/* Partner / Organisation Marquee Carousel with Actual Logos */}
       <PartnerCarousel />
     </section>
   )

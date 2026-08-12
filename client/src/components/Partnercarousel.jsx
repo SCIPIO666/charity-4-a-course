@@ -1,20 +1,14 @@
 import React from 'react'
 
-/**
- * usage when real partners exist
- *   <PartnerCarousel partners={[
- *     { name: 'Org Name', logo: orgLogoImport },
- *     ...
- *   ]} />
- */
-
-const PLACEHOLDER_PARTNERS = [
-  { name: 'Partner Org 1', logo: null },
-  { name: 'Partner Org 2', logo: null },
-  { name: 'Partner Org 3', logo: null },
-  { name: 'Partner Org 4', logo: null },
-  { name: 'Partner Org 5', logo: null },
-  { name: 'Partner Org 6', logo: null },
+const ACTUAL_PARTNERS = [
+  { name: 'UNICEF', logo: '/partners/unicef.svg' },
+  { name: 'Red Cross', logo: '/partners/redcross.svg' },
+  { name: 'Save the Children', logo: '/partners/savethechildren.svg' },
+  { name: 'World Vision', logo: '/partners/worldvision.svg' },
+  { name: 'Habitat for Humanity', logo: '/partners/habitat.svg' },
+  { name: 'Oxfam International', logo: '/partners/oxfam.svg' },
+  { name: 'GlobalGiving', logo: '/partners/globalgiving.svg' },
+  { name: 'CARE International', logo: '/partners/care.svg' },
 ]
 
 function initials(name) {
@@ -27,38 +21,43 @@ function initials(name) {
 }
 
 export default function PartnerCarousel({
-  partners = PLACEHOLDER_PARTNERS,
-  speedSeconds = 8,
+  partners = ACTUAL_PARTNERS,
+  speedSeconds = 25,
 }) {
   const track = [...partners, ...partners]
 
   return (
-    <div className="w-full overflow-hidden mt-16">
-      <p className="text-center  font-display font-bold tracking-wide uppercase text-brand-white mb-6">
+    <div className="w-full overflow-hidden mt-16 py-8 relative group">
+      <p className="text-center font-display font-bold tracking-wider uppercase text-brand-white/90 mb-8 text-sm md:text-base">
         Organisations We Work Alongside
       </p>
 
+      {/* Edge gradient overlays for smooth seamless appearance */}
+      <div className="pointer-events-none absolute left-0 top-14 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#04211E] to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-14 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#04211E] to-transparent z-10" />
+
       <div
-        className="flex w-max gap-6 my-4"
+        className="flex w-max gap-6 my-2 animate-scroll group-hover:[animation-play-state:paused]"
         style={{
-          animation: `scroll ${speedSeconds}s linear infinite`,
+          animationDuration: `${speedSeconds}s`,
         }}
       >
         {track.map((partner, index) => (
           <div
             key={`${partner.name}-${index}`}
             className="
-              h-34 w-48 shrink-0 rounded-xl
-              bg-ink-50 border border-brand-line-dark
+              h-24 w-52 shrink-0 rounded-xl
+              bg-ink-50/90 border border-brand-line-dark/30
+              hover:border-teal-500/40 hover:bg-ink-100/90
               flex items-center justify-center
-              px-6
+              px-6 py-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/10
             "
           >
             {partner.logo ? (
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-12 max-w-full object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="max-h-12 max-w-full object-contain filter brightness-95 opacity-80 hover:opacity-100 hover:brightness-110 transition-all duration-300"
               />
             ) : (
               <div className="flex flex-col items-center gap-1 opacity-60">

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
+  <!-- Habitat for Humanity Logo -->
+  <g transform="translate(10, 8)">
+    <!-- House Roof / People icon -->
+    <path d="M 5 22 L 22 6 L 39 22" stroke="#00AFEE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="22" cy="18" r="4.5" fill="#00AFEE"/>
+    <path d="M 14 36 C 14 27, 30 27, 30 36" stroke="#00AFEE" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="56" y="27" font-family="'Montserrat', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" letter-spacing="0.5">Habitat</text>
+  <text x="56" y="44" font-family="'Montserrat', sans-serif" font-weight="600" font-size="12" fill="#00AFEE" letter-spacing="1">FOR HUMANITY</text>
+</svg>

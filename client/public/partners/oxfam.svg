@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 60" fill="none">
+  <!-- Oxfam Logo -->
+  <g transform="translate(10, 10)">
+    <!-- Distinctive Oxfam Loop -->
+    <circle cx="20" cy="20" r="16" fill="none" stroke="#61A534" stroke-width="6"/>
+    <path d="M 20 4 L 20 20 L 32 32" stroke="#61A534" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="56" y="41" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="26" fill="#61A534" letter-spacing="2">OXFAM</text>
+</svg>
