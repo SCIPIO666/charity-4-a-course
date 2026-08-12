@@ -10,6 +10,7 @@ export default function Home() {
   variant='outline'
   text='Support Us'
   heading='Improving Lives, One Community at a Time'
+  carousel={true}
   tagline='Responsive, timely outreach to the less fortunate communities'
 />
 <LandingAboutUs/>

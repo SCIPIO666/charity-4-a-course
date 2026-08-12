@@ -8,6 +8,7 @@ function Hero({
   tagline = '',
   variant = 'outline',
   text = '',
+  carousel=false
 }) {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#04211E]">
@@ -27,6 +28,7 @@ function Hero({
       ">
         <div className="
           flex w-full max-w-5xl
+          lg:w-vw
           flex-col
           items-center
           justify-center
@@ -63,7 +65,7 @@ function Hero({
                 {tagline}
               </p>
             )}
-        <HeroCarousel/>
+        {carousel &&  <HeroCarousel/>}
             {text && (
               <CallToActionButton
                 variant={variant}

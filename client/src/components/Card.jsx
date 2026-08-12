@@ -27,6 +27,7 @@ const VARIANT_STYLES = {
     color: 'var(--color-brand-white)',
     border: '2px solid var(--color-teal-500)',
     borderRadius: 'var(--radius-btn)',
+
   },
 }
 
@@ -43,7 +44,7 @@ export default function Card({
       style={{
         ...styles,
         fontFamily: 'var(--font-display)',
-        transition: 'opacity 0.2s ease, transform 0.15s ease',
+        transition: 'all 0.3s ease, transform 0.15s ease',
       }}
       className={`
         p-5
