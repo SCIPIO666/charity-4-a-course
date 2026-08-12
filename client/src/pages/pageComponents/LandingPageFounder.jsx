@@ -6,7 +6,7 @@ export default function LandingPageFounder() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-ink-50 pt-12">
 
-      {/*c diagonal split with curve */}
+      {/* diagonal split with curve */}
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 100 100"
@@ -24,7 +24,7 @@ export default function LandingPageFounder() {
           fill="#14B8A6"
         />
       </svg>
-            <h2 className="font-display text-center relative z-20 font-bold tracking-wide uppercase ">
+        <h2 className="font-display text-center relative z-20 font-bold tracking-wide uppercase ">
               Founder
         </h2>
       {/* content */}

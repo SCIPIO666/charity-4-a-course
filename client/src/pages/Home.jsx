@@ -3,6 +3,7 @@ import Hero from './pageComponents/Hero'
 import LandingAboutUs from './pageComponents/LandingAboutUs'
 import LandingPageFounder from './pageComponents/LandingPageFounder'
 import LandingPageImpact from './pageComponents/LandingPageImpact'
+import LandingPageCta from './pageComponents/LandingPageCta'
 export default function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Home() {
 <LandingAboutUs/>
 <LandingPageFounder/>
 <LandingPageImpact/>
+<LandingPageCta/>
 </>
   )
 }
