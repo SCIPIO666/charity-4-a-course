@@ -1,10 +1,61 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import founder from '../../../public/founder.jpg'
 import CallToActionButton from '../../components/CallToActionButton'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function LandingPageFounder() {
+  const sectionRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.founder-heading', 
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.founder-heading',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.founder-img', 
+        { x: -50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.founder-img',
+            start: 'top 80%',
+          }
+        }
+      )
+      gsap.fromTo('.founder-text', 
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.founder-text',
+            start: 'top 80%',
+          }
+        }
+      )
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-ink-50 pt-12">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-ink-50 pt-12">
 
       {/* diagonal split with curve */}
       <svg
@@ -24,7 +75,7 @@ export default function LandingPageFounder() {
           fill="#14B8A6"
         />
       </svg>
-        <h2 className="font-display text-center relative z-20 font-bold tracking-wide uppercase ">
+        <h2 className="founder-heading font-display text-center relative z-20 font-bold tracking-wide uppercase ">
               Founder
         </h2>
       {/* content */}
@@ -35,12 +86,12 @@ export default function LandingPageFounder() {
           <img
             src={founder}
             alt="Founder of Charity 4 A Course"
-            className="w-full border-4 border-ink-50 max-w-sm md:max-w-md rounded-2xl object-cover object-top aspect-[4/5] shadow-2xl"
+            className="founder-img w-full border-4 border-ink-50 max-w-sm md:max-w-md rounded-2xl object-cover object-top aspect-[4/5] shadow-2xl"
           />
         </div>
 
         {/* Right — Description */}
-        <div className="flex items-center justify-center px-8 py-16 md:py-0">
+        <div className="founder-text flex items-center justify-center px-8 py-16 md:py-0">
           <div className="max-w-md">
             <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
               Samuel Juma Omondi

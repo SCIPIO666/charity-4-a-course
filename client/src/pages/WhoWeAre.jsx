@@ -5,7 +5,7 @@ export default function WhoWeAre() {
     <div>
       <Hero
         variant='outline'
-        heading='About uS'
+        heading='About Us'
         pattern='pattern2'
         carousel={false}
         scrollArrow={true}  

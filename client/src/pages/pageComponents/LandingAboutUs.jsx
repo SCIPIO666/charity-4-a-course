@@ -2,9 +2,76 @@ import about1 from '../../../public/about1.jpg'
 import about2 from '../../../public/about2.jpg'
 import about3 from '../../../public/about3.jpg'
 import about4 from '../../../public/about4.jpg'
+import React, { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default function LandingAboutUs() {
+  const sectionRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.about-heading', 
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.about-heading',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.about-img-left, .about-img-right', 
+        { x: (i) => i === 0 ? -100 : 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.about-img-left',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.about-img-float', 
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.about-img-float',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.about-text-circle', 
+        { scale: 0.5, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.about-text-circle',
+            start: 'top 85%',
+          }
+        }
+      )
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-teal-900 py-24">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-teal-900 py-24">
 
       {/* Heading */}
       <h2
@@ -14,6 +81,9 @@ export default function LandingAboutUs() {
           top-28
           md:top-56
           lg:top-60
+          xl:top-[20%]
+          2xl:top-[25%]
+          about-heading
           z-30
           -translate-x-1/2
           whitespace-nowrap
@@ -41,6 +111,7 @@ export default function LandingAboutUs() {
             top-[20%]
             md:left-[1%]
             md:top-[-5%]
+            about-img-left
             z-20
 
             w-[34vw]
@@ -72,10 +143,15 @@ export default function LandingAboutUs() {
         <div
           className="
             absolute
-            bottom-[15%]
+            bottom-[25%]
             right-[2%]
             md:bottom-[-12%]
             md:right-[10%]
+            xl:bottom-[-1%]
+            xl:right-[2%]
+            2xl:bottom-[5%]
+            2xl:right-[15%]
+            about-img-right
             z-20
 
             w-[34vw]
@@ -109,6 +185,7 @@ export default function LandingAboutUs() {
             absolute
             left-[7%]
             top-[75%]
+            about-img-float
             z-20
 
             h-[clamp(100px,9vw,130px)]
@@ -138,6 +215,7 @@ export default function LandingAboutUs() {
             top-[20%]
             md:right-[2%]
             md:top-[-2%]            
+            about-img-float
             z-20
 
             h-[clamp(100px,10vw,140px)]
@@ -166,6 +244,7 @@ export default function LandingAboutUs() {
             absolute
             left-1/2
             top-1/2
+            about-text-circle
             z-10
 
             flex

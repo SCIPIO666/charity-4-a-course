@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import Card from '../../components/Card'
 import CallToActionButton from '../../components/CallToActionButton'
 import {
@@ -7,6 +7,10 @@ import {
   Handshake,
   Clock
 } from 'lucide-react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const HELP_OPTIONS = [
   {
@@ -32,9 +36,71 @@ const HELP_OPTIONS = [
 ]
 
 export default function LandingPageCta() {
+  const sectionRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.cta-heading', 
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.cta-heading',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.cta-text-left, .cta-text-right', 
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.cta-text-left',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.cta-card', 
+        { scale: 0.9, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: 'back.out(1.5)',
+          scrollTrigger: {
+            trigger: '.cta-card',
+            start: 'top 85%',
+          }
+        }
+      )
+      gsap.fromTo('.cta-btn', 
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.cta-btn',
+            start: 'top 90%',
+          }
+        }
+      )
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className='min-h-screen bg-ink-50 text-brand-white px-6 md:px-12 py-16'>
-      <h2 className="font-display text-center relative z-20 font-bold tracking-wide uppercase py-4 pb-8">
+    <section ref={sectionRef} className='min-h-screen bg-ink-50 text-brand-white px-6 md:px-12 py-16'>
+      <h2 className="cta-heading font-display text-center relative z-20 font-bold tracking-wide uppercase py-4 pb-8">
         Support Us
       </h2>
 
@@ -44,14 +110,14 @@ export default function LandingPageCta() {
         {/* header  */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start mb-16 py-8'>
           {/* left-desktop */}
-          <div>
+          <div className="cta-text-left">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-white leading-tight ">
               How could you help?
             </h2>
           </div>
 
           {/* right-desktop */}
-          <div>
+          <div className="cta-text-right">
             <p className="text-grey-200 text-lg leading-relaxed">
               At <span className="text-teal-300 font-semibold">Charity 4 A Course</span>, we believe
               the collective power of compassion and generosity can create meaningful change.
@@ -70,7 +136,7 @@ export default function LandingPageCta() {
                 <Card
                 key={option.title}
                 variant="outline"
-                className="px-6 py-8 group flex flex-col gap-4 hover:bg-teal-500"
+                className="cta-card px-6 py-8 group flex flex-col gap-4 hover:bg-teal-500"
                 >
                 <div className="
                     flex
@@ -118,7 +184,7 @@ export default function LandingPageCta() {
         </div>
 
         {/* CTA */}
-        <div className='flex justify-center mt-16'>
+        <div className='cta-btn flex justify-center mt-16'>
           <CallToActionButton variant="soft" text="Support Us Today" />
         </div>
 
