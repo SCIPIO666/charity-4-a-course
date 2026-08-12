@@ -1,34 +1,10 @@
 import React from 'react'
 
-const VARIANT_STYLES = {
-  primary: {
-    background: 'var(--color-ink-50)',
-    color: 'var(--color-brand-white)',
-    border: '2px solid var(--color-ink-50)',
-    borderRadius: 'var(--radius-none)',
-  },
-
-  'on-teal': {
-    background: 'var(--color-brand-white)',
-    color: 'var(--color-teal-500)',
-    border: '2px solid var(--color-brand-white)',
-    borderRadius: 'var(--radius-none)',
-  },
-
-  outline: {
-    background: 'var(--color-brand-white)',
-    color: 'var(--color-ink-50)',
-    border: '2px solid var(--color-ink-50)',
-    borderRadius: 'var(--radius-none)',
-  },
-
-  soft: {
-    background: 'var(--color-teal-500)',
-    color: 'var(--color-brand-white)',
-    border: '2px solid var(--color-teal-500)',
-    borderRadius: 'var(--radius-btn)',
-
-  },
+const VARIANT_CLASSES = {
+  primary: 'bg-ink-50 text-white border-2 border-ink-50',
+  'on-teal': 'bg-white text-teal-500 border-2 border-white',
+  outline: 'bg-white text-ink-50 border-2 border-ink-50',
+  soft: 'bg-teal-500 text-white border-2 border-teal-500 rounded-btn hover:bg-ink-50 text-brand-white',
 }
 
 export default function Card({
@@ -36,28 +12,27 @@ export default function Card({
   children,
   className = '',
 }) {
-  const styles =
-    VARIANT_STYLES[variant] ?? VARIANT_STYLES.primary
+  const variantClasses =
+    VARIANT_CLASSES[variant] ?? VARIANT_CLASSES.primary
 
   return (
     <div
-      style={{
-        ...styles,
-        fontFamily: 'var(--font-display)',
-        transition: 'all 0.3s ease, transform 0.15s ease',
-      }}
       className={`
+        ${variantClasses}
+
         p-5
+
+        font-display
+        shadow-xl
+        transition-all
+        duration-300
+        ease-out
+
+        hover:-translate-y-2
+        hover:shadow-2xl
+
         ${className}
       `}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-4px)'
-        e.currentTarget.style.opacity = '0.9'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0)'
-        e.currentTarget.style.opacity = '1'
-      }}
     >
       {children}
     </div>
