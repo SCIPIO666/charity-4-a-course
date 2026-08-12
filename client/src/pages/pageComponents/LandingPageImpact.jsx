@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../../components/Card'
+import PartnerCarousel from '../../components/Partnercarousel'
 export default function LandingPageImpact() {
   return (
    <section className='min-h-screen min-w-screen bg-[#04211E]'>
@@ -46,7 +47,8 @@ export default function LandingPageImpact() {
             </p>
         </Card>
     </div>
- 
+    {/* partner / organisation marquee — placeholder  */}
+    <PartnerCarousel />
    </section>
   )
 }
