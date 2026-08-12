@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
 import {pattern1,pattern2,pattern3,pattern4, pattern5,pattern6 } from '../../data/SvgPatterns'
 import CallToActionButton from '../../components/CallToActionButton'
 import HeroCarousel from './HeroCarousel'
@@ -9,6 +10,7 @@ function Hero({
   pattern='pattern4',
   variant = 'outline',
   text = '',
+  target = '',
   scrollArrow=false,
   carousel=false
 }) {
@@ -21,6 +23,44 @@ function Hero({
         if (patternType==='pattern5') return pattern5
         if (patternType==='pattern6') return pattern6
     }
+
+    const headingRef = useRef(null)
+
+    function SplitText({ text }) {
+    return (
+        <>
+        {text.split('').map((char, index) => (
+            <span
+            key={index}
+            className="inline-block"
+            >
+            {char === ' ' ? '\u00A0' : char}
+            </span>
+        ))}
+        </>
+    )
+    }
+    useLayoutEffect(() => {
+    const letters = headingRef.current.querySelectorAll('span')
+
+    gsap.fromTo(
+        letters,
+        {
+        y: -150,
+        opacity: 0,
+        rotateX: -90,
+        },
+        {
+        y: 0,
+        opacity: 1,
+        rotateX: 0,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: 'back.out(1.7)',
+        }
+    )
+    }, [heading])
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#04211E]">
 
@@ -48,15 +88,13 @@ function Hero({
         ">
 
           {/* Heading */}
-          <h2 className="
-            hero-gradient-text
-            w-full
-            text-center        
-          "
+            <h2
+            ref={headingRef}
+            className="hero-gradient-text w-full text-center"
+            >
+            <SplitText text={heading} />
+            </h2>
 
-          >
-            {heading}
-          </h2>
 
           {/* tagline*/}
           <div className="
@@ -86,7 +124,7 @@ function Hero({
                 text={text}
               />
             )}
-        {scrollArrow && <ScrollArrow/>}
+        {scrollArrow && <ScrollArrow target ={target} />}
           </div>
 
         </div>

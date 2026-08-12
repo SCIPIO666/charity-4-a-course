@@ -8,9 +8,10 @@ export default function News() {
         heading='News And Articles'
         pattern='pattern5'
         carousel={false}
-        scrollArrow={true}            
+        scrollArrow={true} 
+        target = '#news'           
       />  
-      <section className='min-h-screen bg-ink-50 text-brand-white'>
+      <section id='news' className='min-h-screen bg-ink-50 text-brand-white'>
 
       </section>         
     </div>

@@ -8,9 +8,10 @@ export default function Gallery() {
         heading='Gallery'
         pattern='pattern3'
         carousel={false}
-        scrollArrow={true}            
+        scrollArrow={true} 
+        target = '#gallery'           
       />
-      <section className='min-h-screen bg-ink-50 text-brand-white'>
+      <section id='gallery' className='min-h-screen bg-ink-50 text-brand-white'>
 
       </section>  
     </div>

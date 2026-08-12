@@ -5,12 +5,13 @@ export default function WhoWeAre() {
     <div>
       <Hero
         variant='outline'
-        heading='Who We Are'
+        heading='About uS'
         pattern='pattern2'
         carousel={false}
-        scrollArrow={true}            
+        scrollArrow={true}  
+        target = '#about'          
       />
-      <section className='min-h-screen bg-ink-50 text-brand-white'>
+      <section id='about' className='min-h-screen bg-ink-50 text-brand-white'>
 
       </section>      
     </div>

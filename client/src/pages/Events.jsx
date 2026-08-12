@@ -5,12 +5,13 @@ export default function Events() {
     <div>
       <Hero
         variant='outline'
-        heading='Upcoming  Events'
+        heading='Events'
         pattern='pattern1'
         carousel={false}
-        scrollArrow={true}        
+        scrollArrow={true}   
+        target = '#events'     
       />   
-      <section className='min-h-screen bg-ink-50 text-brand-white'>
+      <section id='events' className='min-h-screen bg-ink-50 text-brand-white'>
 
       </section>         
     </div>

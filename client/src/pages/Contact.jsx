@@ -9,8 +9,9 @@ export default function Contact() {
         pattern='pattern6'
         carousel={false}
         scrollArrow={true}
+        target = '#contact'
       />
-      <section className='min-h-screen bg-ink-50 text-brand-white'>
+      <section id='contact' className='min-h-screen bg-ink-50 text-brand-white'>
 
       </section>
     </div>
