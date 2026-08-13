@@ -1,9 +1,19 @@
 import React from 'react'
 
-export default function TestimonialCard({ name, role, review, rating, image }) {
+export default function TestimonialCard({ name, role, review, rating, image,className='' }) {
   return (
-    <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 m-4 border border-white/10 hover:border-teal-400/30 transition-all duration-300 hover:transform hover:-translate-y-1">
-      
+    <div
+    className={`
+        relative
+        bg-white/5
+        backdrop-blur-sm
+        rounded-2xl
+        p-8
+        border
+        border-white/10
+        ${className}
+    `}
+    >
       {/* top-left quotation*/}
       <svg 
         className="absolute top-4 left-6 w-12 h-12 text-teal-400/20 fill-current"

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../../components/Header'
 import CallToActionButton from '../../components/CallToActionButton'
+import Card from '../../components/Card'
 import Reveal from '../../components/Reveal'
 import { fadeUp, scaleUp } from '../../utils/motion'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -10,11 +11,11 @@ const PROGRAMME_PHOTOS = [
   { src: '/about1.jpg', title: 'Community Outreach', tag: 'Outreach' },
   { src: '/loop1.jpg', title: 'Youth Empowerment', tag: 'Education' },
   { src: '/about2.jpg', title: 'Skills Training', tag: 'Vocational' },
-  { src: '/loop2.jpg', title: 'Food & Nutrition', tag: 'Health' },
+  { src: '/loop2.jpg', title: 'Community Outreach', tag: 'Outreach' },
   { src: '/about3.jpg', title: 'Healthcare Access', tag: 'Wellness' },
-  { src: '/loop3.jpg', title: 'Clean Water Project', tag: 'Infrastructure' },
-  { src: '/about4.jpg', title: 'Sustainable Farming', tag: 'Agriculture' },
-  { src: '/loop4.jpg', title: 'Emergency Relief', tag: 'Support' }
+  { src: '/loop3.jpg', title: 'Food & Nutrition', tag: 'Food Security' },
+  { src: '/about4.jpg', title: 'Community Outreach', tag: 'Outreach' },
+  { src: '/loop4.jpg', title: 'Food & Nutrition', tag: 'Food Security'  }
 ]
 
 const KEY_PROGRAMMES = [
@@ -22,19 +23,19 @@ const KEY_PROGRAMMES = [
     icon: Utensils,
     title: 'Food Security & Outreach',
     description: 'Providing nutritious meals and essential food supplies to vulnerable families and community centers.',
-    stat: '15,000+ Meals Served'
+    stat: '1,000+ Meals Served'
   },
   {
     icon: BookOpen,
     title: 'Youth Skills & Education',
     description: 'Empowering young leaders with practical vocational skills, mentorship, and educational resources.',
-    stat: '2,500+ Students Trained'
+    stat: '100+ Students Trained'
   },
   {
     icon: ShieldCheck,
     title: 'Community Health',
     description: 'Delivering basic health screenings, sanitation supplies, and wellness workshops in remote areas.',
-    stat: '45+ Clinics Organized'
+    stat: '5+ Clinics Organized'
   }
 ]
 
@@ -70,7 +71,7 @@ export default function Programmes() {
             const Icon = prog.icon
             return (
               <Reveal key={prog.title} variant={fadeUp} delay={idx * 0.1}>
-                <div className="
+                {/* <div className="
                   h-full p-6 sm:p-8 rounded-2xl
                   bg-ink-100/80 border border-teal-500/20
                   hover:border-teal-400/50 hover:bg-ink-100
@@ -94,7 +95,34 @@ export default function Programmes() {
                     </span>
                     <ArrowRight size={16} className="text-grey-400 group-hover/prog:translate-x-1 group-hover/prog:text-teal-300 transition-all" />
                   </div>
-                </div>
+                </div> */}
+                <Card
+                  className="
+
+                    hover:border-teal-400/50 hover:bg-ink-100
+                    transition-all duration-300 group/prog
+                    flex flex-col justify-between shadow-xl
+                "
+                variant='primary'
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-6 group-hover/prog:bg-teal-500 group-hover/prog:text-white transition-colors duration-300">
+                      <Icon size={24} />
+                    </div>
+                    <h4 className="font-display text-xl font-bold text-white mb-3 group-hover/prog:text-teal-300 transition-colors">
+                      {prog.title}
+                    </h4>
+                    <p className="text-grey-200 text-sm leading-relaxed mb-6">
+                      {prog.description}
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-teal-500/15 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-teal-400 tracking-wide">
+                      {prog.stat}
+                    </span>
+                    <ArrowRight size={16} className="text-grey-400 group-hover/prog:translate-x-1 group-hover/prog:text-teal-300 transition-all" />
+                  </div>
+                </Card>
               </Reveal>
             )
           })}

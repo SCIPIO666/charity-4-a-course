@@ -49,6 +49,9 @@ export default function Testimonials() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.to('.testimonial-card', {
+      x: 0
+})
 
       gsap.fromTo('.testimonial-header', 
         { y: 50, opacity: 0 },
@@ -111,25 +114,33 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <section ref={sectionRef} className='min-h-screen bg-[#04211E] p-4 md:p-8'>
+    <section ref={sectionRef} className='min-h-content bg-[#04211E] p-4 md:p-8'>
 
       <div className="testimonial-header mb-12">
         <Header text='Testimonials' />
       </div>
 
 
-      <div className="testimonial-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-        {testimonials.map((testimonial) => (
-          <TestimonialCard
-            key={testimonial.name}
-            name={testimonial.name}
-            role={testimonial.role}
-            review={testimonial.review}
-            rating={testimonial.rating}
-            image={testimonial.image}
-            className="testimonial-card"
-          />
-        ))}
+      <div className="
+      testimonial-viewport
+       overflow-hidden
+       overflow-x-auto
+      overflow-y-hidden
+      scrollbar-hide
+      ">
+        <div className="testimonial-track flex gap-6">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard
+              key={testimonial.name}
+              name={testimonial.name}
+              role={testimonial.role}
+              review={testimonial.review}
+              rating={testimonial.rating}
+              image={testimonial.image}
+              className="testimonial-card shrink-0 w-[85vw] md:w-[45vw] lg:w-[32vw]"
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
