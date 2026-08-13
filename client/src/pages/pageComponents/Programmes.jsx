@@ -61,13 +61,52 @@ export default function Programmes() {
         </Reveal>
       </div>
 
+
+
+    {/* programmes */}
+      <div className="relative z-10 max-w-6xl mx-auto mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {KEY_PROGRAMMES.map((prog, idx) => {
+            const Icon = prog.icon
+            return (
+              <Reveal key={prog.title} variant={fadeUp} delay={idx * 0.1}>
+                <div className="
+                  h-full p-6 sm:p-8 rounded-2xl
+                  bg-ink-100/80 border border-teal-500/20
+                  hover:border-teal-400/50 hover:bg-ink-100
+                  transition-all duration-300 group/prog
+                  flex flex-col justify-between shadow-xl
+                ">
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-6 group-hover/prog:bg-teal-500 group-hover/prog:text-white transition-colors duration-300">
+                      <Icon size={24} />
+                    </div>
+                    <h4 className="font-display text-xl font-bold text-white mb-3 group-hover/prog:text-teal-300 transition-colors">
+                      {prog.title}
+                    </h4>
+                    <p className="text-grey-200 text-sm leading-relaxed mb-6">
+                      {prog.description}
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-teal-500/15 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-teal-400 tracking-wide">
+                      {prog.stat}
+                    </span>
+                    <ArrowRight size={16} className="text-grey-400 group-hover/prog:translate-x-1 group-hover/prog:text-teal-300 transition-all" />
+                  </div>
+                </div>
+              </Reveal>
+            )
+          })}
+        </div>
+      </div>
     {/* rotating carousel */}
 
       <div className="relative z-10 max-w-6xl mx-auto my-12 flex items-center justify-center min-h-[640px] md:min-h-[720px] group">
         
         {/*  orbit guide*/}
-        <div className="absolute w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] md:w-[600px] md:h-[600px] rounded-full   shadow-[0_0_60px_rgba(20,184,166,0.12)] pointer-events-none" />
-        <div className="absolute w-[350px] h-[350px] sm:w-[470px] sm:h-[470px] md:w-[590px] md:h-[590px] rounded-full   pointer-events-none animate-spin [animation-duration:90s]" />
+        <div className="absolute w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] md:w-[800px] md:h-[800px] rounded-full   shadow-[0_0_60px_rgba(20,184,166,0.12)] pointer-events-none" />
+        <div className="absolute w-[350px] h-[350px] sm:w-[470px] sm:h-[470px] md:w-[790px] md:h-[790px] rounded-full   pointer-events-none animate-spin [animation-duration:90s]" />
 
         {/* parent 360deg , pause on hover*/}
         <div className="absolute inset-0 flex items-center justify-center animate-rotate pause-on-hover pointer-events-none">
@@ -120,65 +159,11 @@ export default function Programmes() {
         </div>
 
         {/* cta*/}
-        <div className="relative z-30 max-w-lg mx-auto text-center px-6 py-8 md:p-10 rounded-3xl transparent backdrop-blur-md border border-teal-500/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30 mb-4 shadow-inner">
-            <Heart size={24} className="animate-pulse text-teal-400" />
-          </div>
-
-          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mb-4 drop-shadow-lg">
-            Join us in the journey to empower communities and transform lives.
-          </h3>
-
-          <p className="text-grey-200 text-xs sm:text-sm md:text-base leading-relaxed mb-6">
-            Together we can provide education, clean water, and food security to vulnerable families.
-          </p>
-
-          <div className="flex justify-center">
             <CallToActionButton variant="soft" text="Get Involved Today" />
-          </div>
-        </div>
+
 
       </div>
-
-    {/* programmes */}
-      <div className="relative z-10 max-w-6xl mx-auto mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {KEY_PROGRAMMES.map((prog, idx) => {
-            const Icon = prog.icon
-            return (
-              <Reveal key={prog.title} variant={fadeUp} delay={idx * 0.1}>
-                <div className="
-                  h-full p-6 sm:p-8 rounded-2xl
-                  bg-ink-100/80 border border-teal-500/20
-                  hover:border-teal-400/50 hover:bg-ink-100
-                  transition-all duration-300 group/prog
-                  flex flex-col justify-between shadow-xl
-                ">
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-6 group-hover/prog:bg-teal-500 group-hover/prog:text-white transition-colors duration-300">
-                      <Icon size={24} />
-                    </div>
-                    <h4 className="font-display text-xl font-bold text-white mb-3 group-hover/prog:text-teal-300 transition-colors">
-                      {prog.title}
-                    </h4>
-                    <p className="text-grey-200 text-sm leading-relaxed mb-6">
-                      {prog.description}
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-teal-500/15 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-teal-400 tracking-wide">
-                      {prog.stat}
-                    </span>
-                    <ArrowRight size={16} className="text-grey-400 group-hover/prog:translate-x-1 group-hover/prog:text-teal-300 transition-all" />
-                  </div>
-                </div>
-              </Reveal>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* Interactive Modal Preview for Clicked Photo */}
+      {/* photo modal*/}
       <AnimatePresence>
         {activePhoto && (
           <motion.div
@@ -186,7 +171,7 @@ export default function Programmes() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActivePhoto(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-1000 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
