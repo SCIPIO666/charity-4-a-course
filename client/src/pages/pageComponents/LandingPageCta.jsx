@@ -99,7 +99,7 @@ export default function LandingPageCta() {
   }, [])
 
   return (
-    <section ref={sectionRef} className='min-h-screen bg-ink-50 text-brand-white px-6 md:px-12 py-16'>
+    <section ref={sectionRef} className='min-h-screen bg-teal-950 text-brand-white px-6 md:px-12 py-16'>
       <h2 className="cta-heading font-display text-center relative z-20 font-bold tracking-wide uppercase py-4 pb-8">
         Support Us
       </h2>

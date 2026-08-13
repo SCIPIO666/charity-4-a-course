@@ -1,5 +1,7 @@
 import React from 'react'
 import Hero from './pageComponents/Hero'
+import MissionVisionBanner from './pageComponents/MissionVisionBanner'
+
 export default function WhoWeAre() {
   return (
     <div>
@@ -9,10 +11,22 @@ export default function WhoWeAre() {
         pattern='pattern2'
         carousel={false}
         scrollArrow={true}  
-        target = '#about'          
+        target='#about'          
       />
-      <section id='about' className='min-h-screen bg-ink-50 text-brand-white'>
-
+      
+      <section id='about' className='bg-[#04211E]'>
+        <MissionVisionBanner 
+          heading='MISSION' 
+          info='To improve the quality of life through compassion and commitment to uplifting communities  in Kenya'
+          imageSource='../../public/about1.jpg'
+        />
+        
+        <MissionVisionBanner 
+          heading='VISION' 
+          info='A Kenya where every community thrives with dignity, opportunity, and sustainable development, creating lasting positive change for generations to come.'
+          imageSource='../../public/about2.jpg'
+           layout = 'right'
+        />
       </section>      
     </div>
   )

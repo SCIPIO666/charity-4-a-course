@@ -23,7 +23,7 @@ const KEY_PROGRAMMES = [
     icon: Utensils,
     title: 'Food Security & Outreach',
     description: 'Providing nutritious meals and essential food supplies to vulnerable families and community centers.',
-    stat: '1,000+ Meals Served'
+    stat: '300+ Meals Served'
   },
   {
     icon: BookOpen,
