@@ -24,7 +24,7 @@ export default function WhoWeAre() {
         <MissionVisionBanner 
           heading='VISION' 
           info='A Kenya where every community thrives with dignity, opportunity, and sustainable development, creating lasting positive change for generations to come.'
-          imageSource='../../public/about2.jpg'
+          imageSource='../../public/vision.jpg'
            layout = 'right'
         />
       </section>      
