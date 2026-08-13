@@ -66,7 +66,7 @@ export default function Contact() {
 
       <section
         id="contact"
-        className="relative overflow-hidden bg-ink-50 px-6 py-24 md:px-12"
+        className="relative overflow-hidden bg-teal-950 px-6 py-24 md:px-12"
       >
 
         {/* background */}
