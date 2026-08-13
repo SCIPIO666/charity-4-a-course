@@ -49,9 +49,10 @@ export default function Testimonials() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to('.testimonial-card', {
-      x: 0
-})
+      
+//       gsap.to('.testimonial-card', {
+//       x: 0
+// })
 
       gsap.fromTo('.testimonial-header', 
         { y: 50, opacity: 0 },
