@@ -270,12 +270,13 @@ export default function LandingAboutUs() {
             className="
               max-w-[430px]
               font-body
-              text-[clamp(1rem,1.4vw,1.05rem)]
+              text-[clamp(1.1rem,1.4vw,1.05rem)]
+              md:text-[clamp(1rem,1.4vw,1.05rem)]
               leading-relaxed
               text-white
             "
           >
-            Charity 4 A Course is a non-profit and non-governmental
+            <span className='text-ink-50 font-body leading-relaxed'>Charity 4 A Course </span>is a non-profit and non-governmental
             charity organization aimed to work towards improving
             the quality of life through responsive and timely
             outreach charity programs among less fortunate

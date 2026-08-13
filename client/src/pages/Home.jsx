@@ -4,6 +4,8 @@ import LandingAboutUs from './pageComponents/LandingAboutUs'
 import LandingPageFounder from './pageComponents/LandingPageFounder'
 import LandingPageImpact from './pageComponents/LandingPageImpact'
 import LandingPageCta from './pageComponents/LandingPageCta'
+import Testimonials from './Testimonials'
+import Programmes from './Programmes'
 export default function Home() {
   return (
     <>
@@ -18,7 +20,9 @@ export default function Home() {
 />
 <LandingAboutUs/>
 <LandingPageFounder/>
+<Programmes/>
 <LandingPageImpact/>
+<Testimonials/>
 <LandingPageCta/>
 </>
   )

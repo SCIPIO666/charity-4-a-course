@@ -59,7 +59,7 @@ export default function LandingPageFounder() {
 
       {/* diagonal split with curve */}
       <svg
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full opacity-70"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         aria-hidden="true"
@@ -72,7 +72,7 @@ export default function LandingPageFounder() {
             C 65 35, 55 15, 100 0
             Z
           "
-          fill="#14B8A6"
+          fill="#04211E"
         />
       </svg>
         <h2 className="founder-heading font-display text-center relative z-20 font-bold tracking-wide uppercase ">
@@ -100,7 +100,7 @@ export default function LandingPageFounder() {
               Founder bio — background, the vision behind the organisation's outreach work in Kenya.
             </p>
             <div className="mt-8">
-              <CallToActionButton variant="soft" text="Read Our Full Story" />
+              <CallToActionButton variant="outline" text="Read Our Full Story" />
             </div>
           </div>
         </div>
