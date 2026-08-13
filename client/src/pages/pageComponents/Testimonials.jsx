@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
-import Header from '../components/Header'
-import TestimonialCard from '../components/TestimonialCard'
+import Header from '../../components/Header'
+import TestimonialCard from '../../components/TestimonialCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -69,7 +69,7 @@ export default function Testimonials() {
         { 
           y: 80, 
           opacity: 0,
-          scale: 0.5
+          scale: 0.2
         },
         {
           y: 0,
