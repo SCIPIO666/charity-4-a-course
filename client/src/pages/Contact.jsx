@@ -426,10 +426,10 @@ export default function Contact() {
             </div>
 
 
-            <div className="h-[350px] overflow-hidden border border-white/10 grayscale">
+            <div className="h-[350px] overflow-hidden border border-white/10 ">
               <iframe
                 title="Charity 4 A Course location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818263144151!2d36.8212126!3d-1.2327195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f184f63fd7117%3A0x3e5e297e8a38ab52!2sCiata%20City%20Mall%2C%20Ridgeways!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8574795458358!2d36.8247907739739!3d-1.257463835593219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16e2fe486739%3A0xe7216c224780faa8!2sRegal%20Plaza%20Ltd!5e0!3m2!1sen!2ske!4v1786627528283!5m2!1sen!2ske" 
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -438,6 +438,7 @@ export default function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-full w-full"
               />
+
             </div>
 
           </div>
