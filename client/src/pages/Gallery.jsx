@@ -3,42 +3,10 @@ import Hero from './pageComponents/Hero'
 import Card from '../components/Card'
 import { Link } from 'react-router-dom'
 import { CalendarDays, MapPin } from 'lucide-react'
+import { EVENTS } from '../data/events'
+
 export default function Gallery() {
 
-  const events = [
-
-    {
-      slug: '4-12-2021',
-      cover: '/loop2.jpg',
-      title: 'Youth Empowerment',
-      tag: 'Education',
-      date: '28 June 2026',
-      location: 'Kiambu, Kenya',
-    },
-    {
-      src: '/about2.jpg',
-      title: 'Skills Training',
-      tag: 'Vocational',
-      date: '15 June 2026',
-      location: 'Nairobi, Kenya',
-    },
-
-    {
-      src: '/about4.jpg',
-      title: 'Community Outreach',
-      tag: 'Outreach',
-      date: '7th January 2022',
-      location: 'Kiambu, Kenya',
-    },
-    {
-      src: '/loop1.jpg',
-      title: 'Community Outreach',
-      tag: 'Outreach',
-      date: '4th Dec 2021',
-      location: 'Nairobi, Kenya',
-    },
-    
-  ]
 
   return (
     <div className="bg-teal-950">
@@ -61,7 +29,7 @@ export default function Gallery() {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-          {events.map(({ slug, src, title, tag, date, location }) => (
+          {EVENTS.map(({ slug, src, title, tag, date, location }) => (
 
             <Card
               key={`${title}-${src}`}
