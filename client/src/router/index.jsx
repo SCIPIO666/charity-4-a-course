@@ -7,6 +7,7 @@ import News from '../pages/News'
 import WhoWeAre from '../pages/WhoWeAre'
 import Layout from '../components/Layout'
 import NotFoundPage from '../pages/NotFoundPage'
+import GalleryEvent from '../pages/GalleryEvent'
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: '/about', element: <WhoWeAre /> },
       { path: '/events', element: <Events /> },
       { path: '/gallery', element: <Gallery /> },
+      { path: '/gallery/:eventSlug', element: <GalleryEvent /> },
       { path: '/contact', element: <Contact /> },
       { path: '/news', element: <News /> },
     ],
