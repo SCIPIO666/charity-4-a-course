@@ -13,7 +13,7 @@ export default function Events() {
         scrollArrow={true}
         target="#events"
       />
-      <section id="events" className="min-h-content bg-teal-950 text-brand-white">
+      <section id="events" className="min-h-screen bg-teal-950 text-brand-white flex justify-center align-center">
         <EventBanner />
       </section>
     </div>

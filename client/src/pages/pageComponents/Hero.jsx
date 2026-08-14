@@ -68,7 +68,7 @@ function Hero({
 
       {/* background */}
       <div
-        className="absolute inset-0 h-full w-screen  min-w-screen"
+        className="absolute inset-0 [&>svg]:w-full  [&>svg]:block"
         dangerouslySetInnerHTML={{ __html: determinePattern(pattern) }}
       />
 
