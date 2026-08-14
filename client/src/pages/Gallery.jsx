@@ -1,20 +1,15 @@
 import React from 'react'
 import Hero from './pageComponents/Hero'
 import Card from '../components/Card'
-import CallToActionButton from '../components/CallToActionButton'
+import { Link } from 'react-router-dom'
 import { CalendarDays, MapPin } from 'lucide-react'
 export default function Gallery() {
 
   const events = [
+
     {
-      src: '/about1.jpg',
-      title: 'Community Outreach',
-      tag: 'Outreach',
-      date: '12 July 2026',
-      location: 'Nairobi, Kenya',
-    },
-    {
-      src: '/loop1.jpg',
+      slug: '4-12-2021',
+      cover: '/loop2.jpg',
       title: 'Youth Empowerment',
       tag: 'Education',
       date: '28 June 2026',
@@ -27,41 +22,22 @@ export default function Gallery() {
       date: '15 June 2026',
       location: 'Nairobi, Kenya',
     },
-    {
-      src: '/loop2.jpg',
-      title: 'Community Outreach',
-      tag: 'Outreach',
-      date: '31 May 2026',
-      location: 'Kiambu, Kenya',
-    },
-    {
-      src: '/about3.jpg',
-      title: 'Healthcare Access',
-      tag: 'Wellness',
-      date: '18 May 2026',
-      location: 'Nairobi, Kenya',
-    },
-    {
-      src: '/loop3.jpg',
-      title: 'Food & Nutrition',
-      tag: 'Food Security',
-      date: '02 May 2026',
-      location: 'Nairobi, Kenya',
-    },
+
     {
       src: '/about4.jpg',
       title: 'Community Outreach',
       tag: 'Outreach',
-      date: '20 April 2026',
+      date: '7th January 2022',
       location: 'Kiambu, Kenya',
     },
     {
-      src: '/loop4.jpg',
-      title: 'Food & Nutrition',
-      tag: 'Food Security',
-      date: '05 April 2026',
+      src: '/loop1.jpg',
+      title: 'Community Outreach',
+      tag: 'Outreach',
+      date: '4th Dec 2021',
       location: 'Nairobi, Kenya',
     },
+    
   ]
 
   return (
@@ -85,7 +61,7 @@ export default function Gallery() {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-          {events.map(({ src, title, tag, date, location }) => (
+          {events.map(({ slug, src, title, tag, date, location }) => (
 
             <Card
               key={`${title}-${src}`}
@@ -184,10 +160,23 @@ export default function Gallery() {
      
                 <div className="mt-5">
 
-                  <CallToActionButton
-                    variant="primary"
-                    text="Open Event"
-                  />
+                <Link
+                  to={`/gallery/${slug}`}
+                  className="
+                    inline-block
+                    bg-ink-50
+                    px-5
+                    py-2.5
+                    font-display
+                    font-bold
+                    text-white
+                    transition-transform
+                    duration-300
+                    hover:translate-x-1
+                  "
+                >
+                  Open Event
+                </Link>
 
                 </div>
 
