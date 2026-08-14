@@ -92,7 +92,7 @@ function Hero({
           {/* Heading */}
             <h2
             ref={headingRef}
-            className="hero-gradient-text w-full text-center"
+            className="font-display text-4xl font-bold uppercase leading-tight md:text-6xl"
             >
             <SplitText text={heading} />
             </h2>

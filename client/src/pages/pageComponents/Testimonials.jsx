@@ -117,7 +117,7 @@ export default function Testimonials() {
   return (
     <section ref={sectionRef} className='min-h-content bg-[#04211E] p-4 md:p-8'>
 
-      <div className="testimonial-header mb-12">
+      <div className="testimonial-header mb-12 text-center">
         <Header text='Testimonials' />
       </div>
 
