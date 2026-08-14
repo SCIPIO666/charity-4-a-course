@@ -28,7 +28,7 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-50 rounded-none">
+    <footer className="bg-ink-50 rounded-none p-8">
       {/* main grid */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* brand */}

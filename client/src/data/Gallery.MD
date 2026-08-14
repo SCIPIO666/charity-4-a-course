@@ -20,7 +20,7 @@ without touching any component code.
 ```js
 {
   slug: 'your-new-slug',       // must exactly match the folder name
-  cover: '/some-cover.jpg',    // thumbnail shown on the /gallery grid
+  src: '../public/some-cover.jpg',    // thumbnail shown on the /gallery grid-save thumbnail in public folder
   title: 'Event Title',
   tag: 'Category',
   date: '12 March 2027',
