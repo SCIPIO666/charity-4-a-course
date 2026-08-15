@@ -25,6 +25,7 @@ export default function MissionVisionBanner({
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top 75%',
+        toggleActions: 'play reverse play reverse',
       },
     })
 
