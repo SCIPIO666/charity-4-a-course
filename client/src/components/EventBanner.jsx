@@ -100,7 +100,7 @@ export default function EventBanner() {
   }
 
   return (
-    <div className="px-4 md:px-8 flex flex-col gap-6">
+    <div className="px-4 md:px-8 flex flex-col   gap-6">
       {events.map((event, index) => (
         <EventCard
           key={`${event.title}-${event.date}`}

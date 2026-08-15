@@ -75,7 +75,7 @@ export default function NewsFeed() {
   }
 
   return (
-    <div className="px-4 md:px-8 max-w-3xl mx-auto flex flex-col gap-6">
+    <div className="px-4 md:px-8 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => (
         <NewsCard key={`${post.title}-${post.date}`} post={post} />
       ))}

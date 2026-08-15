@@ -104,10 +104,10 @@ export default function LandingPageImpact() {
           {IMPACT_STATS.map((stat) => (
             <Card
               key={stat.text}
-              variant="soft"
+              variant="cool"
               className="impact-card px-6 py-8 group text-center border   transition-all duration-300"
             >
-              <h3 className="text-5xl text-center font-bold text-ink-50  transition-colors duration-300 group-hover:text-brand-white">
+              <h3 className="text-5xl text-center font-bold text-white/100  transition-colors duration-300 group-hover:text-brand-white">
                 <span 
                   className="impact-number"
                   data-target={stat.number}
@@ -116,7 +116,7 @@ export default function LandingPageImpact() {
                 </span>
                 <span>{stat.suffix}</span>
               </h3>
-              <p className="text-center text-ink-50 text-xl transition-colors duration-300 group-hover:text-brand-white">{stat.text}</p>
+              <p className="text-center text-white/100 text-xl transition-colors duration-300 group-hover:text-brand-white">{stat.text}</p>
             </Card>
           ))}
         </div>

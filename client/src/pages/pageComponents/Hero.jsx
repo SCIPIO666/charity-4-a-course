@@ -27,18 +27,23 @@ function Hero({
     const headingRef = useRef(null)
 
     function SplitText({ text }) {
-    return (
+      const words = text.split(' ')
+      return (
         <>
-        {text.split('').map((char, index) => (
-            <span
-            key={index}
-            className="inline-block"
-            >
-            {char === ' ' ? '\u00A0' : char}
-            </span>
-        ))}
+          {words.map((word, wi) => (
+            <React.Fragment key={wi}>
+              <span className="inline-block whitespace-nowrap">
+                {word.split('').map((char, ci) => (
+                  <span key={ci} className="char inline-block">
+                    {char}
+                  </span>
+                ))}
+              </span>
+              {wi < words.length - 1 && ' '}
+            </React.Fragment>
+          ))}
         </>
-    )
+      )
     }
     useLayoutEffect(() => {
     const letters = headingRef.current.querySelectorAll('span')
