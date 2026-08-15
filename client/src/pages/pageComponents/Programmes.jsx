@@ -103,7 +103,7 @@ export default function Programmes() {
                     transition-all duration-300 group/prog
                     flex flex-col justify-between shadow-xl
                 "
-                variant='primary'
+                variant='cool'
                 >
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-6 group-hover/prog:bg-teal-500 group-hover/prog:text-white transition-colors duration-300">

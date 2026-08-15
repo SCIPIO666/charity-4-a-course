@@ -33,8 +33,8 @@ export default function Gallery() {
 
             <Card
               key={`${title}-${src}`}
-              variant="soft"
-              className="group overflow-hidden p-0"
+              variant="cool"
+              className="group overflow-hidden p-0 "
             >
 
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -69,7 +69,7 @@ export default function Gallery() {
 
 
 
-              <div className="bg-teal-500 p-5">
+              <div className="bg-teal-500 p-5 w-full">
 
 
                 <span className="
