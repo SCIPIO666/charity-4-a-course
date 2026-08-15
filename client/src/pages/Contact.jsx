@@ -8,7 +8,11 @@ import {
 } from 'lucide-react'
 import { FaFacebookF, FaWhatsapp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLayoutEffect, useRef } from 'react'
 
+gsap.registerPlugin(ScrollTrigger)
 const CONTACT_INFO = [
   {
     icon: Mail,
@@ -50,6 +54,43 @@ const SOCIALS = [
 ]
 
 export default function Contact() {
+  const sectionRef = useRef(null)
+  const contactsRef = useRef(null)
+  const formRef=useRef(null)
+  const mapRef=useRef(null)
+
+useLayoutEffect(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: 'top 75%',
+      toggleActions: 'play reverse play reverse',
+    },
+  })
+
+  tl.fromTo(
+    contactsRef.current,
+    { opacity: 0, scale: 0.65, x: -100 },
+    { opacity: 1, scale: 1, x: 0, duration: 0.6, ease: 'back.out(1.4)' }
+  )
+    .fromTo(
+      formRef.current,
+      { opacity: 0, scale: 0.65, x: 100 },
+      { opacity: 1, scale: 1, x: 0, duration: 0.6, ease: 'back.out(1.4)' }
+    )
+    .fromTo(
+      mapRef.current,
+      { opacity: 0, scale: 0.65, y: 100 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.4)' }
+    )
+
+  return () => {
+    tl.scrollTrigger?.kill()
+    tl.kill()
+  }
+}, [])
+
+
   return (
     <main className="bg-ink-50 text-brand-white">
 
@@ -66,6 +107,7 @@ export default function Contact() {
 
       <section
         id="contact"
+        ref={sectionRef}
         className="relative overflow-hidden bg-teal-950 px-6 py-24 md:px-12"
       >
 
@@ -102,7 +144,7 @@ export default function Contact() {
 
 
 
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div ref={contactsRef} className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
 
             {/* contacts */}
             <div>
@@ -233,7 +275,7 @@ export default function Contact() {
 
 
             {/* form */}
-            <div className="border border-white/10 bg-white/[0.04] p-6 md:p-10">
+            <div ref={formRef} className="border border-white/10 bg-white/[0.04] p-6 md:p-10">
 
               <div className="mb-8">
 
@@ -405,7 +447,7 @@ export default function Contact() {
 
 
           {/* map */}
-          <div className="mt-20 border-t border-white/10 pt-16">
+          <div  className="mt-20 border-t border-white/10 pt-16">
 
             <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
 
@@ -426,7 +468,7 @@ export default function Contact() {
             </div>
 
 
-            <div className="h-[350px] overflow-hidden border border-white/10 ">
+            <div ref={mapRef} className="h-[350px] overflow-hidden border border-white/10 ">
               <iframe
                 title="Charity 4 A Course location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8574795458358!2d36.8247907739739!3d-1.257463835593219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16e2fe486739%3A0xe7216c224780faa8!2sRegal%20Plaza%20Ltd!5e0!3m2!1sen!2ske!4v1786627528283!5m2!1sen!2ske" 

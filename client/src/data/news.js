@@ -4,11 +4,11 @@
 
 export const NEWS_POSTS = [
  {
-    title: 'Youth Empowerment Day — 200 Students Reached',
-    date: '2026-06-28',
-    body: 'Our June outreach brought skills training and mentorship to over 200 students across Kiambu county.',
+    title: 'Monthly Outreach December 2021',
+    date: '2021-12-4',
+    body: "Our December outreach helped us visit treehouse children's home in lakisama Nairobi  ,we were able to share food clothing and cleaning their quarters",
     image: '/loop2.jpg',
-    externalLink: 'https://facebook.com/...',
+    externalLink: 'https://www.facebook.com/charity4acourse/',
    externalLinkText: 'See more photos on Facebook',
   },
 ]

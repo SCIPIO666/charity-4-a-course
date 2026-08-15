@@ -24,14 +24,15 @@ export default function Gallery() {
 
     tl.fromTo(
       cardRefs.current,
-      { opacity: 0, scale: 0.85 },
+      { opacity: 0, scale: 0.65 },
       {
         opacity: 1,
         scale: 1,
         duration: 0.6,
         stagger: 0.08,
         ease: 'back.out(1.4)',
-      }
+      },
+      '=0.6' 
     )
 
     return () => {
