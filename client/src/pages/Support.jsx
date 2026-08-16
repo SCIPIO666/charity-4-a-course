@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './pageComponents/Hero'
 import SupportMethods from '../components/SupportMethods'
-
+import LandingPageCta from './pageComponents/LandingPageCta'
 export default function Support() {
   return (
     <div className="bg-teal-950">
@@ -15,6 +15,7 @@ export default function Support() {
       />
       <section id="support" className="min-h-screen bg-teal-950 px-6 py-20 md:px-10">
         <div className="mx-auto max-w-5xl">
+          <LandingPageCta variant="compact" cta={false} />
           <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl">
             Every contribution — however you choose to give — goes directly toward the outreach,
             training, and mentorship programmes you can see across our{' '}
