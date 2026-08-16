@@ -4,11 +4,13 @@ import {pattern1,pattern2,pattern3,pattern4, pattern5,pattern6 } from '../../dat
 import CallToActionButton from '../../components/CallToActionButton'
 import HeroCarousel from './HeroCarousel'
 import ScrollArrow from '../../components/ScrollArrow'
+import { useNavigate } from 'react-router-dom'
 function Hero({
   heading = 'HEADING',
   tagline = '',
   pattern='pattern4',
   variant = 'outline',
+   image = '', 
   text = '',
   target = '',
   scrollArrow=false,
@@ -67,15 +69,30 @@ function Hero({
         }
     )
     }, [heading])
-
+const navigate = useNavigate()
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#04211E]">
-
+     
+      {image ? (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#04211E] via-[#04211E]/70 to-[#04211E]/40" />
+        </>
+      ) : (
+        <div
+          className="absolute inset-0 [&>svg]:w-full [&>svg]:block"
+          dangerouslySetInnerHTML={{ __html: determinePattern(pattern) }}
+        />
+      )}
+      
       {/* background */}
-      <div
+      {/* <div
         className="absolute inset-0 [&>svg]:w-full  [&>svg]:block"
         dangerouslySetInnerHTML={{ __html: determinePattern(pattern) }}
-      />
+      /> */}
 
       {/*content */}
       <div className="
@@ -129,6 +146,7 @@ function Hero({
               <CallToActionButton
                 variant={variant}
                 text={text}
+                callback={() => navigate('/support')}
               />
             )}
         {scrollArrow && <ScrollArrow target ={target} />}

@@ -69,7 +69,7 @@ const handleNavClick = (href, e) => {
 
           {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
-            <CallToActionButton variant='primary' text='Support Us'/>
+            <CallToActionButton variant='primary' text='Support Us' callback={() => navigate('/support')}/>
             </div>
           {/* hamburger */}
           <button
@@ -116,7 +116,7 @@ const handleNavClick = (href, e) => {
             </a>
           ))}
           {/* CTA */}
-            <CallToActionButton variant='soft' text='Support Us'/>
+            <CallToActionButton variant='soft' text='Support Us' callback={() => navigate('/support')}/>
         </div>
       </div>
     </>

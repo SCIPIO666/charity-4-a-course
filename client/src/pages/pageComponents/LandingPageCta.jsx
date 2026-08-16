@@ -7,6 +7,7 @@ import {
   Handshake,
   Clock
 } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -37,7 +38,7 @@ const HELP_OPTIONS = [
 
 export default function LandingPageCta() {
   const sectionRef = useRef(null)
-
+const navigate = useNavigate()
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.cta-heading', 
@@ -185,7 +186,7 @@ export default function LandingPageCta() {
 
         {/* CTA */}
         <div className='cta-btn flex justify-center mt-16'>
-          <CallToActionButton variant="soft" text="Support Us Today" />
+          <CallToActionButton variant="soft" text="Support Us Today" callback={() => navigate('/support')} />
         </div>
 
       </div>

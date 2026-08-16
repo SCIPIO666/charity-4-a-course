@@ -6,7 +6,7 @@ import Reveal from '../../components/Reveal'
 import { fadeUp, scaleUp } from '../../utils/motion'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Heart, Users, Sparkles, ArrowRight, ShieldCheck, BookOpen, Utensils } from 'lucide-react'
-
+import { useNavigate } from 'react-router-dom'
 const PROGRAMME_PHOTOS = [
   { src: '/about1.jpg', title: 'Community Outreach', tag: 'Outreach' },
   { src: '/loop1.jpg', title: 'Youth Empowerment', tag: 'Education' },
@@ -42,7 +42,7 @@ const KEY_PROGRAMMES = [
 export default function Programmes() {
   const [activePhoto, setActivePhoto] = useState(null)
   const totalPhotos = PROGRAMME_PHOTOS.length
-
+const navigate = useNavigate()
   return (
     <section className="relative min-h-screen bg-[#04211E] text-brand-white py-20 px-4 md:px-8 overflow-hidden select-none">
       
@@ -187,7 +187,7 @@ export default function Programmes() {
         </div>
 
         {/* cta*/}
-            <CallToActionButton variant="soft" text="Get Involved Today" />
+            <CallToActionButton variant="soft" text="Get Involved Today"  callback={() => navigate('/support')} />
 
 
       </div>
