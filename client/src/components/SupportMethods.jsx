@@ -14,7 +14,7 @@ function CopyField({ label, value }) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      // clipboard denied — value is already visible as text, safe fallback
+      // clipboard denied 
     }
   }
 

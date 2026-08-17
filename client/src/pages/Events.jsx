@@ -9,6 +9,7 @@ export default function Events() {
         variant="outline"
         heading="Events"
         pattern="pattern1"
+        image='/heroBg/eventsHero.jpg'
         carousel={false}
         scrollArrow={true}
         target="#events"

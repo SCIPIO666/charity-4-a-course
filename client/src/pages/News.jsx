@@ -9,6 +9,7 @@ export default function News() {
         variant="outline"
         heading="News And Articles"
         pattern="pattern5"
+        image='/heroBg/newsHero.jpg'
         carousel={false}
         scrollArrow={true}
         target="#news"

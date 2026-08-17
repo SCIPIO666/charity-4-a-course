@@ -13,6 +13,7 @@ export default function Home() {
   variant='outline'
   pattern='pattern4'
   text='Support Us'
+  image='/heroBg/homeHero.jpg'
   scrollArrow={false} 
   heading='Improving Lives, One Community at a Time'
   carousel={true}

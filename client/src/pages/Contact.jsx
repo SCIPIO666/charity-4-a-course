@@ -100,6 +100,7 @@ useLayoutEffect(() => {
         heading="Contact Us"
         pattern="pattern6"
         carousel={false}
+        image='/heroBg/contactHero.jpg'
         scrollArrow={true}
         target="#contact"
       />
