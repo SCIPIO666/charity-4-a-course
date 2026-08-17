@@ -14,7 +14,7 @@ function CopyField({ label, value }) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      // clipboard denied 
+      // clipboard denied
     }
   }
 
@@ -33,6 +33,34 @@ function CopyField({ label, value }) {
     </button>
   )
 }
+
+// The three M-Pesa flows share a shape (label + a couple of fields +
+// instructions) but each keys its fields differently, so they're
+// described here once and rendered by the same block below instead
+// of three near-duplicate JSX cards.
+const MPESA_VARIANTS = [
+  {
+    key: 'mpesaTill',
+    fields: [
+      { label: 'Till Number', field: 'till' },
+      { label: 'Account Number', field: 'accountNumber' },
+    ],
+  },
+  {
+    key: 'mpesaPayBill',
+    fields: [
+      { label: 'Business Name', field: 'BusinessName' },
+      { label: 'Account Number', field: 'accountNumber' },
+    ],
+  },
+  {
+    key: 'mpesaSendMoney',
+    fields: [
+      { label: 'Name', field: 'name' },
+      { label: 'Number', field: 'number' },
+    ],
+  },
+]
 
 export default function SupportMethods() {
   const methods = Object.values(SUPPORT_METHODS).filter((m) => m.enabled)
@@ -56,21 +84,29 @@ export default function SupportMethods() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {SUPPORT_METHODS.mpesa.enabled && (
-        <Card variant="soft" className="p-6">
-          <h3 className="font-display text-xl font-bold uppercase mb-4">M-Pesa</h3>
-          <div className="flex flex-col gap-2">
-            <CopyField label="Till Number" value={SUPPORT_METHODS.mpesa.till} />
-            <CopyField label="Paybill" value={SUPPORT_METHODS.mpesa.paybill} />
-            <CopyField label="Account Number" value={SUPPORT_METHODS.mpesa.accountNumber} />
-          </div>
-          <p className="mt-4 text-sm text-white/70">{SUPPORT_METHODS.mpesa.instructions}</p>
-        </Card>
-      )}
+
+      {MPESA_VARIANTS.map(({ key, fields }) => {
+        const data = SUPPORT_METHODS[key]
+        if (!data?.enabled) return null
+
+        return (
+          <Card key={key} variant="soft" className="p-6">
+            <h3 className="font-display text-xl font-bold uppercase mb-4">{data.label}</h3>
+            <div className="flex flex-col gap-2">
+              {fields.map(({ label, field }) => (
+                <CopyField key={field} label={label} value={data[field]} />
+              ))}
+            </div>
+            {data.instructions && (
+              <p className="mt-4 text-sm text-white/70">{data.instructions}</p>
+            )}
+          </Card>
+        )
+      })}
 
       {SUPPORT_METHODS.bank.enabled && (
         <Card variant="soft" className="p-6">
-          <h3 className="font-display text-xl font-bold uppercase mb-4">Bank Transfer</h3>
+          <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.bank.label}</h3>
           <div className="flex flex-col gap-2">
             <CopyField label="Bank" value={SUPPORT_METHODS.bank.bankName} />
             <CopyField label="Account Name" value={SUPPORT_METHODS.bank.accountName} />
@@ -82,7 +118,7 @@ export default function SupportMethods() {
 
       {SUPPORT_METHODS.paypal.enabled && (
         <Card variant="soft" className="p-6">
-          <h3 className="font-display text-xl font-bold uppercase mb-4">PayPal</h3>
+          <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.paypal.label}</h3>
           <a
             href={SUPPORT_METHODS.paypal.link}
             target="_blank"
@@ -96,7 +132,7 @@ export default function SupportMethods() {
 
       {SUPPORT_METHODS.card.enabled && (
         <Card variant="soft" className="p-6">
-          <h3 className="font-display text-xl font-bold uppercase mb-4">Card Payment</h3>
+          <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.card.label}</h3>
           <a
             href={SUPPORT_METHODS.card.link}
             target="_blank"
@@ -110,9 +146,9 @@ export default function SupportMethods() {
 
       {SUPPORT_METHODS.whatsapp.enabled && (
         <Card variant="cool" className="p-6">
-          <h3 className="font-display text-xl font-bold uppercase mb-4">Prefer to talk it through?</h3>
+          <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.whatsapp.label}</h3>
           <a
-            href={`https://wa.me/${SUPPORT_METHODS.whatsapp.number}?text=${encodeURIComponent(SUPPORT_METHODS.whatsapp.message)}`}
+            href={`https://wa.me/${SUPPORT_METHODS.whatsapp.number.replace(/\D/g, '')}?text=${encodeURIComponent(SUPPORT_METHODS.whatsapp.message)}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] text-ink-50 font-bold px-4 py-2.5 hover:bg-[#128C7E] transition-colors"
@@ -121,6 +157,7 @@ export default function SupportMethods() {
           </a>
         </Card>
       )}
+
     </div>
   )
 }
