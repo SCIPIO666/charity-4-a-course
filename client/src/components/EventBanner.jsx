@@ -81,7 +81,7 @@ export default function EventBanner() {
   const events = getUpcomingEvents()
   const sectionRef = useRef(null)
   const cardRefs = useRef([])
-
+  const image='/heroBg/bg.jpg'
   useLayoutEffect(() => {
     if (events.length === 0) return
 
@@ -114,6 +114,11 @@ export default function EventBanner() {
   if (events.length === 0) {
     return (
       <div className="px-8 md:px-8">
+            <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#04211E] via-[#04211E]/70 to-[#04211E]/40" />    
         <Card variant='cool' className="border border-white/10 bg-white/[0.04] p-6 md:p-10">
           <div className="py-10">
             <p className="font-display text-3xl md:text-5xl font-bold leading-tight">
@@ -134,6 +139,7 @@ export default function EventBanner() {
 
   return (
     <div ref={sectionRef} className="px-4 md:px-8 flex flex-col gap-6">
+
       {events.map((event, index) => (
         <EventCard
           key={`${event.title}-${event.date}`}

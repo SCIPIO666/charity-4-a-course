@@ -34,7 +34,6 @@ export default function LandingPageImpact() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading animation
       gsap.fromTo('.impact-heading', 
         { y: 30, opacity: 0 },
         {
@@ -49,7 +48,6 @@ export default function LandingPageImpact() {
         }
       )
 
-      // Card entrance animation
       gsap.fromTo('.impact-card', 
         { y: 50, opacity: 0 },
         {
@@ -65,7 +63,7 @@ export default function LandingPageImpact() {
         }
       )
 
-      // Number counter animation
+
       const numbers = gsap.utils.toArray('.impact-number')
 
       numbers.forEach((number) => {
@@ -93,7 +91,8 @@ export default function LandingPageImpact() {
   }, [])
 
   return (
-    <section ref={sectionRef} className='py-16 md:py-24 bg-[#04211E] overflow-hidden'>
+    <section ref={sectionRef} className='relative py-16 md:py-24 bg-[#04211E] overflow-hidden'>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <h2 className="impact-heading font-display p-4 mb-8 text-center relative z-20 font-bold tracking-wide uppercase text-3xl md:text-4xl text-brand-white">
@@ -122,7 +121,7 @@ export default function LandingPageImpact() {
         </div>
       </div>
       
-      {/* Partner / Organisation Marquee Carousel with Actual Logos */}
+      {/* Partner / Organisation  Logos */}
       <PartnerCarousel />
     </section>
   )

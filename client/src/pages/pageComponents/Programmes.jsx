@@ -66,6 +66,7 @@ const navigate = useNavigate()
 
     {/* programmes */}
       <div className="relative z-10 max-w-6xl mx-auto mt-20">
+          
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {KEY_PROGRAMMES.map((prog, idx) => {
             const Icon = prog.icon

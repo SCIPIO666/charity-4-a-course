@@ -41,6 +41,8 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
   const navigate = useNavigate()
   const compact = variant === 'compact'
 
+
+
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // no-op gracefully if '.cta-heading' isn't rendered (compact variant) —
@@ -82,6 +84,8 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
       ref={sectionRef}
       className={`bg-teal-950 text-brand-white px-6 md:px-12 ${compact ? 'py-10' : 'min-h-screen py-16'}`}
     >
+
+ 
       {!compact && (
         <h2 className="cta-heading font-display text-center relative z-20 font-bold tracking-wide uppercase py-4 pb-8">
           Support Us

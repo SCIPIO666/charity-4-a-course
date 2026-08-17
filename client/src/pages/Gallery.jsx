@@ -47,7 +47,7 @@ export default function Gallery() {
         variant="outline"
         heading="Gallery"
         pattern="pattern3"
-        image='/heroBg/galleryHero.jpg'
+        image='/heroBg/gallery.jpg'
         carousel={false}
         scrollArrow={true}
         target="#gallery"

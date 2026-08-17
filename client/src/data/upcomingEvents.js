@@ -20,21 +20,6 @@ export const UPCOMING_EVENTS = [
      ctaText: 'Learn More',
     ctaLink: '/contact',
    },   
-   {
-     title: 'Community Outreach Day',
-     date: '2026-10-16',
-     location: 'Kiambu, Kenya',
-    description: 'A day of skills training and mentorship for local youth.',
-     ctaText: 'Learn More',
-    ctaLink: '/contact',
-   },
-    {
-     title: 'Community Outreach Day',
-     date: '2026-10-17',
-     location: 'Kiambu, Kenya',
-    description: 'A day of skills training and mentorship for local youth.',
-     ctaText: 'Learn More',
-    ctaLink: '/contact',
-   },
+   
 
 ]

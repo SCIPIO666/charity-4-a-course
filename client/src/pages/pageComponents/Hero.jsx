@@ -5,6 +5,8 @@ import CallToActionButton from '../../components/CallToActionButton'
 import HeroCarousel from './HeroCarousel'
 import ScrollArrow from '../../components/ScrollArrow'
 import { useNavigate } from 'react-router-dom'
+
+    // const image='/heroBg/bg.jpg'
 function Hero({
   heading = 'HEADING',
   tagline = '',

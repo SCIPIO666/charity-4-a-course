@@ -3,6 +3,7 @@ import Hero from './pageComponents/Hero'
 import EventBanner from '../components/EventBanner'
 
 export default function Events() {
+    const image='/heroBg/bg.jpg'
   return (
     <div>
       <Hero
