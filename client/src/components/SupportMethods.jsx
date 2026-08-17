@@ -34,10 +34,6 @@ function CopyField({ label, value }) {
   )
 }
 
-// The three M-Pesa flows share a shape (label + a couple of fields +
-// instructions) but each keys its fields differently, so they're
-// described here once and rendered by the same block below instead
-// of three near-duplicate JSX cards.
 const MPESA_VARIANTS = [
   {
     key: 'mpesaTill',
@@ -67,7 +63,7 @@ export default function SupportMethods() {
 
   if (methods.length === 0) {
     return (
-      <Card className="border border-white/10 bg-white/[0.04] p-6 md:p-10 text-center">
+      <Card variant='cool' className="border border-white/10 bg-white/[0.04] p-6 md:p-10 text-center">
         <p className="font-display text-3xl md:text-4xl font-bold leading-tight">
           Ways to give are coming soon
         </p>
@@ -81,16 +77,22 @@ export default function SupportMethods() {
       </Card>
     )
   }
-
+const image='/heroBg/bg.jpg'
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 z-10 ">
+            <div
+            className="absolute inset-0 bg-cover bg-center opacity-50 "
+            style={{ backgroundImage: `url(${image})` }}
+          />
+           <div className="absolute inset-0 bg-gradient-to-t from-[#04211E] via-[#04211E]/70 to-[#04211E]/40" />
+        
 
       {MPESA_VARIANTS.map(({ key, fields }) => {
         const data = SUPPORT_METHODS[key]
         if (!data?.enabled) return null
 
         return (
-          <Card key={key} variant="soft" className="p-6">
+          <Card key={key} variant="cool" className=" z-10 p-6">
             <h3 className="font-display text-xl font-bold uppercase mb-4">{data.label}</h3>
             <div className="flex flex-col gap-2">
               {fields.map(({ label, field }) => (
@@ -105,7 +107,7 @@ export default function SupportMethods() {
       })}
 
       {SUPPORT_METHODS.bank.enabled && (
-        <Card variant="soft" className="p-6">
+        <Card variant="soft" className=" z-10 p-6">
           <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.bank.label}</h3>
           <div className="flex flex-col gap-2">
             <CopyField label="Bank" value={SUPPORT_METHODS.bank.bankName} />
@@ -117,7 +119,7 @@ export default function SupportMethods() {
       )}
 
       {SUPPORT_METHODS.paypal.enabled && (
-        <Card variant="soft" className="p-6">
+        <Card variant="soft" className=" z-10 p-6">
           <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.paypal.label}</h3>
           <a
             href={SUPPORT_METHODS.paypal.link}
@@ -131,7 +133,7 @@ export default function SupportMethods() {
       )}
 
       {SUPPORT_METHODS.card.enabled && (
-        <Card variant="soft" className="p-6">
+        <Card variant="soft" className=" z-10 p-6">
           <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.card.label}</h3>
           <a
             href={SUPPORT_METHODS.card.link}
@@ -145,7 +147,7 @@ export default function SupportMethods() {
       )}
 
       {SUPPORT_METHODS.whatsapp.enabled && (
-        <Card variant="cool" className="p-6">
+        <Card variant="cool" className=" z-10 p-6">
           <h3 className="font-display text-xl font-bold uppercase mb-4">{SUPPORT_METHODS.whatsapp.label}</h3>
           <a
             href={`https://wa.me/${SUPPORT_METHODS.whatsapp.number.replace(/\D/g, '')}?text=${encodeURIComponent(SUPPORT_METHODS.whatsapp.message)}`}

@@ -40,7 +40,7 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
   const sectionRef = useRef(null)
   const navigate = useNavigate()
   const compact = variant === 'compact'
-
+const image='/heroBg/pic.jpg'
 
 
   useLayoutEffect(() => {
@@ -82,9 +82,14 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
   return (
     <section
       ref={sectionRef}
-      className={`bg-teal-950 text-brand-white px-6 md:px-12 ${compact ? 'py-10' : 'min-h-screen py-16'}`}
+      className={`relative z-20 bg-teal-950 text-brand-white px-6 md:px-12 ${compact ? 'py-10' : 'min-h-screen py-16'}`}
     >
-
+        <div
+            className="z-0 absolute inset-0 bg-cover bg-center opacity-35"
+            style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#04211E] via-[#04211E]/70 to-[#04211E]/40" />
+     
  
       {!compact && (
         <h2 className="cta-heading font-display text-center relative z-20 font-bold tracking-wide uppercase py-4 pb-8">
@@ -92,17 +97,17 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
         </h2>
       )}
 
-      <div className={compact ? 'max-w-5xl mx-auto' : 'max-w-6xl mx-auto'}>
+      <div className={compact ? 'max-w-5xl mx-auto z-20' : 'max-w-6xl mx-auto z-20'}>
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 items-start ${compact ? 'gap-6 mb-10 py-2' : 'gap-8 md:gap-16 mb-16 py-8'}`}
+          className={`grid grid-cols-1 md:grid-cols-2 items-start z-20 ${compact ? 'gap-6 mb-10 py-2' : 'gap-8 md:gap-16 mb-16 py-8'}`}
         >
-          <div className="cta-text-left">
+          <div className="cta-text-left z-20">
             <h2 className={`font-display font-bold text-brand-white leading-tight ${compact ? 'text-2xl md:text-3xl' : 'text-3xl md:text-4xl'}`}>
               How could you help?
             </h2>
           </div>
 
-          <div className="cta-text-right">
+          <div className="cta-text-right z-20">
             <p className={`text-grey-200 leading-relaxed ${compact ? 'text-base' : 'text-lg'}`}>
               At <span className="text-teal-300 font-semibold">Charity 4 A Course</span>, we believe
               the collective power of compassion and generosity can create meaningful change.
@@ -112,14 +117,14 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
           </div>
         </div>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ${compact ? 'gap-4' : 'gap-8'}`}>
+        <div className={`z-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ${compact ? 'gap-4' : 'gap-8'}`}>
           {HELP_OPTIONS.map((option) => {
             const Icon = option.icon
             return (
               <Card
                 key={option.title}
                 variant="outline"
-                className={`cta-card group flex flex-col gap-3 hover:bg-teal-500 ${compact ? 'px-5 py-6' : 'px-6 py-8'}`}
+                className={`z-20 cta-card group flex flex-col gap-3 hover:bg-teal-500 ${compact ? 'px-5 py-6' : 'px-6 py-8'}`}
               >
                 <div
                   className={`flex items-center justify-center rounded-xl bg-teal-950 text-teal-300 transition-all duration-300 group-hover:bg-teal-500 group-hover:text-white ${compact ? 'h-11 w-11' : 'h-14 w-14'}`}
@@ -144,7 +149,7 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
         </div>
 
         {cta && (
-          <div className="cta-btn flex justify-center mt-16">
+          <div className="z-30 cta-btn flex justify-center mt-16">
             <CallToActionButton variant="soft" text="Support Us Today" callback={() => navigate('/support')} />
           </div>
         )}
