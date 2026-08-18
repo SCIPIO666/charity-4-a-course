@@ -96,12 +96,12 @@ const navigate = useNavigate()
         ">
 
           {/* Heading */}
-            <h2
+            <h1
             ref={headingRef}
             className="font-display text-4xl font-bold uppercase leading-tight md:text-6xl"
             >
             <SplitText text={heading} />
-            </h2>
+            </h1>
 
 
           {/* tagline*/}

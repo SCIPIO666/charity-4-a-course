@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://charity4acourse.co.ke/sitemap.xml

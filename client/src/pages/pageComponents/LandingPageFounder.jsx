@@ -96,8 +96,11 @@ const navigate = useNavigate()
             <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
               Samuel Juma Omondi
             </h2>
-            <p className="mt-6 text-grey-200 leading-relaxed">
-              Founder bio — background, the vision behind the organisation's outreach work in Kenya.
+      <p className="mt-6 text-grey-200 leading-relaxed">
+              Samuel founded Charity 4 A Course on a simple belief — that
+              lasting change comes from showing up consistently, not just
+              once. He continues to lead our outreach work directly, staying
+              close to the communities we serve.
             </p>
             <div className="mt-8">
               <CallToActionButton variant="outline" text="Read Our Full Story" callback={() => navigate('/bio')}/>
