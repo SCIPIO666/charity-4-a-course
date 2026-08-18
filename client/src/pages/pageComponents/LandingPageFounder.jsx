@@ -121,7 +121,7 @@ const navigate = useNavigate()
         he brings scientific precision and deep compassion to community service.
       </p>
       
-      <p className="text-white/80 text-sm italic border-l-2 border-teal-400/50 pl-4">
+      <p className="text-white/80 text-sm italic border-l-2 border-brand-50 pl-4">
         "Behind every specimen is a patient. Behind every community need is a 
         human being. My purpose is to serve both with competence, compassion, 
         and dignity."
