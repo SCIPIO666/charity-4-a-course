@@ -6,13 +6,13 @@ import HeroCarousel from './HeroCarousel'
 import ScrollArrow from '../../components/ScrollArrow'
 import { useNavigate } from 'react-router-dom'
 
-    // const image='/heroBg/bg.jpg'
 function Hero({
   heading = 'HEADING',
   tagline = '',
   pattern='pattern4',
   variant = 'outline',
-   image = '', 
+  image = '',
+  imagePosition = 'bg-center lg:bg-top',
   text = '',
   target = '',
   scrollArrow=false,
@@ -54,31 +54,19 @@ function Hero({
 
     gsap.fromTo(
         letters,
-        {
-        // y: -100,
-        scale: 0,
-        opacity: 0,
-        // rotateX: -45,
-        },
-        {
-        // y: 0,
-        scale: 1,
-        opacity: 1,
-        // rotateX: 0,
-        duration: 0.7,
-        stagger: 0.035,
-        ease: 'power3.out',
-        }
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.7, stagger: 0.035, ease: 'power3.out' }
     )
     }, [heading])
+
 const navigate = useNavigate()
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#04211E]">
-     
+
       {image ? (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className={`absolute inset-0 bg-cover ${imagePosition}`}
             style={{ backgroundImage: `url(${image})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#04211E] via-[#04211E]/70 to-[#04211E]/40" />
@@ -89,12 +77,6 @@ const navigate = useNavigate()
           dangerouslySetInnerHTML={{ __html: determinePattern(pattern) }}
         />
       )}
-      
-      {/* background */}
-      {/* <div
-        className="absolute inset-0 [&>svg]:w-full  [&>svg]:block"
-        dangerouslySetInnerHTML={{ __html: determinePattern(pattern) }}
-      /> */}
 
       {/*content */}
       <div className="

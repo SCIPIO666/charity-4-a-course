@@ -3,7 +3,7 @@ import founder from '../../../public/founder.jpg'
 import CallToActionButton from '../../components/CallToActionButton'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import { useNavigate } from 'react-router-dom'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function LandingPageFounder() {
@@ -53,7 +53,7 @@ export default function LandingPageFounder() {
     }, sectionRef)
     return () => ctx.revert()
   }, [])
-
+const navigate = useNavigate()
   return (
     <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-ink-50 pt-12">
 
@@ -100,7 +100,7 @@ export default function LandingPageFounder() {
               Founder bio — background, the vision behind the organisation's outreach work in Kenya.
             </p>
             <div className="mt-8">
-              <CallToActionButton variant="outline" text="Read Our Full Story" />
+              <CallToActionButton variant="outline" text="Read Our Full Story" callback={() => navigate('/bio')}/>
             </div>
           </div>
         </div>

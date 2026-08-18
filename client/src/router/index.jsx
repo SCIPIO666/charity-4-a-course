@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 import NotFoundPage from '../pages/NotFoundPage'
 import GalleryEvent from '../pages/GalleryEvent'
 import Support from '../pages/Support'
+import Bio from '../pages/Bio'
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: '/contact', element: <Contact /> },
       { path: '/news', element: <News /> },
       { path: '/support', element: <Support /> },
+      { path: '/bio', element: <Bio /> },
     ],
   },
   { path: '*', element: <NotFoundPage /> },
