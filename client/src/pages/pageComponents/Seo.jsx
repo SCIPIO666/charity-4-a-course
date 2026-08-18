@@ -2,10 +2,10 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 const SITE_NAME = 'Charity 4 A Course'
-const SITE_URL = 'https://charity4acourse.co.ke' // temporary
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://charity4acourse.vercel.app'
 const DEFAULT_IMAGE = `${SITE_URL}/og-cover.jpg` 
 
-//at the top of every page   
+// top of every page   
 export default function Seo({
   title,
   description = "A non-governmental, non-profit organisation improving quality of life through responsive, timely outreach among less fortunate communities in Kenya.",

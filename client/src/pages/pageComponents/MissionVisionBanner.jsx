@@ -59,7 +59,7 @@ export default function MissionVisionBanner({
         <div ref={imageWrapRef} className="w-full md:w-[60%] flex items-center">
           <div className="relative w-full h-[300px] md:h-[450px]">
             <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-teal-400/20 shadow-2xl shadow-teal-500/10 hover:scale-[1.02] transition-transform duration-500">
-              <img src={imageSource} alt={heading} className="w-full h-full object-cover" />
+              <img src={imageSource} alt={heading} className="w-full h-full object-cover" loading='lazy' decoding='async'/>
             </div>
 
             <div className="absolute -top-4 -right-4 w-20 h-20 bg-teal-400/10 rounded-full blur-xl" />

@@ -65,6 +65,8 @@ export default function LandingAboutUs() {
         <img
           src="/about1.jpg"
           alt="Charity 4 A Course Outreach"
+          loading="lazy"
+          decoding="async"
           className="about-bg w-full h-full object-cover object-center"
         />
 

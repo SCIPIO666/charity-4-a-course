@@ -86,6 +86,8 @@ const navigate = useNavigate()
           <img
             src={founder}
             alt="Founder of Charity 4 A Course"
+            loading="lazy"
+            decoding="async"
             className="founder-img w-full border-4 border-ink-50 max-w-sm md:max-w-md rounded-2xl object-cover object-top aspect-[4/5] shadow-2xl"
           />
         </div>
