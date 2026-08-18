@@ -1,20 +1,16 @@
 import React from 'react'
 import Hero from './pageComponents/Hero'
-import SEO from './pageComponents/Seo'
+import Seo from './pageComponents/Seo'
+import { seoConfig } from '../router'
 export default function Bio() {
   return (
     <div className="bg-teal-950">
-          <SEO
-             title="Who We Are"
-              description="Charity 4 A Course is a non-governmental, non-profit
-              organisation improving quality of life through responsive,
-              timely outreach among less fortunate communities in Kenya."
-              path="/about"
-          />
+      <Seo {...seoConfig.bio} />
       <Hero
         variant="outline"
         heading="About The Founder"
         pattern="pattern3"
+        imageAlt = 'founder image'
         image={'/heroBg/shirtHero.jpg'}
         imagePosition="bg-center lg:bg-top"
         carousel={false}

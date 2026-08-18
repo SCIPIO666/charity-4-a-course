@@ -2,16 +2,20 @@ import React from 'react'
 import Hero from './pageComponents/Hero'
 import SupportMethods from '../components/SupportMethods'
 import LandingPageCta from './pageComponents/LandingPageCta'
+import Seo from './pageComponents/Seo'
+import { seoConfig } from '../router'
 export default function Support() {
   return (
     <div className="bg-teal-950">
+      <Seo {...seoConfig.support} />
       <Hero
-    variant="outline"
-    heading="Support Our Work"
-    image="/donate.webp"
-    carousel={false}
-    scrollArrow={true}
-    target="#support"
+        variant="outline"
+        heading="Support Our Work"
+        image="/donate.webp"
+        imageAlt = 'support us  banner image'
+        carousel={false}
+        scrollArrow={true}
+        target="#support"
       />
       <section id="support" className="min-h-screen bg-teal-950 px-6 py-20 md:px-10">
         <div className="mx-auto max-w-5xl">

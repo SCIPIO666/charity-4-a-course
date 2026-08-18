@@ -1,15 +1,18 @@
 import React from 'react'
 import Hero from './pageComponents/Hero'
 import MissionVisionBanner from './pageComponents/MissionVisionBanner'
-
+import Seo from './pageComponents/Seo'
+import { seoConfig } from '../router'
 export default function WhoWeAre() {
   return (
     <div>
+      <Seo {...seoConfig.about} />
       <Hero
         variant='outline'
         heading='About Us'
         pattern='pattern2'
         image='/heroBg/mission.jpg'
+        imageAlt = 'about us banner image'
         carousel={false}
         scrollArrow={true}  
         target='#about'          

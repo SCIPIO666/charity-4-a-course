@@ -2,7 +2,8 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getEventPhotos } from '../data/gallery'
 import { EVENTS } from '../data/events'
-
+import Seo from './pageComponents/Seo'
+import { seoConfig } from '../router'
 export default function GalleryEvent() {
   const { eventSlug } = useParams()
   const event = EVENTS.find((e) => e.slug === eventSlug)
@@ -10,6 +11,7 @@ export default function GalleryEvent() {
 
   return (
     <section className="min-h-screen bg-teal-950 px-6 py-20">
+      <Seo {...seoConfig.galleryEvent} />
       <div className="mx-auto max-w-7xl">
         <Link to="/gallery" className="text-teal-300 text-sm hover:text-white transition-colors">
           ← Back to Gallery

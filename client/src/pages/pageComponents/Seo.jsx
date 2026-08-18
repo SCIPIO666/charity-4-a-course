@@ -6,7 +6,7 @@ const SITE_URL = 'https://charity4acourse.co.ke' // temporary
 const DEFAULT_IMAGE = `${SITE_URL}/og-cover.jpg` 
 
 //at the top of every page   
-export default function SEO({
+export default function Seo({
   title,
   description = "A non-governmental, non-profit organisation improving quality of life through responsive, timely outreach among less fortunate communities in Kenya.",
   path = '/',

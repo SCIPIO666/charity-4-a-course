@@ -15,9 +15,9 @@ const IMAGES = [
 export default function HeroCarousel() {
   return (
     <div className="w-full overflow-hidden">
-      
-      <div className="flex w-max animate-scroll gap-4">
-        
+
+      <div className="flex w-max animate-scroll gap-4" aria-hidden="true">
+
         {[...IMAGES, ...IMAGES].map((image, index) => (
           <div
             key={index}
@@ -32,6 +32,7 @@ export default function HeroCarousel() {
             <img
               src={image}
               alt=""
+              loading="lazy"
               className="h-full w-full object-cover"
             />
           </div>

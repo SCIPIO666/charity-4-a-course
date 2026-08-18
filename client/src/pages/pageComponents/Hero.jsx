@@ -12,6 +12,7 @@ function Hero({
   pattern='pattern4',
   variant = 'outline',
   image = '',
+  imageAlt = '', 
   imagePosition = 'bg-center lg:bg-top',
   text = '',
   target = '',
@@ -65,9 +66,12 @@ const navigate = useNavigate()
 
       {image ? (
         <>
-          <div
-            className={`absolute inset-0 bg-cover ${imagePosition}`}
-            style={{ backgroundImage: `url(${image})` }}
+          <img
+            src={image}
+            alt={imageAlt}
+            loading="eager"
+            fetchpriority="high"
+            className={`absolute inset-0 w-full h-full object-cover ${imagePosition}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#04211E] via-[#04211E]/70 to-[#04211E]/40" />
         </>
@@ -95,7 +99,6 @@ const navigate = useNavigate()
           text-center
         ">
 
-          {/* Heading */}
             <h1
             ref={headingRef}
             className="font-display text-4xl font-bold uppercase leading-tight md:text-6xl"

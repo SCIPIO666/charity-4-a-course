@@ -6,7 +6,8 @@ import { EVENTS } from '../data/events'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLayoutEffect, useRef } from 'react'
-
+import Seo from './pageComponents/Seo'
+import { seoConfig } from '../router'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Gallery() {
@@ -43,11 +44,13 @@ export default function Gallery() {
 
   return (
     <div className="bg-teal-950">
+      <Seo {...seoConfig.gallery} />
       <Hero
         variant="outline"
         heading="Gallery"
         pattern="pattern3"
         image='/heroBg/gallery.jpg'
+        imageAlt = 'gallery banner image'
         carousel={false}
         scrollArrow={true}
         target="#gallery"
