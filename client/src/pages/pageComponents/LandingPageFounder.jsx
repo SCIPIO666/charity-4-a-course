@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import founder from '../../../public/founder.jpg'
+import founder from '../../../public/heroBg/juma.jpeg'
 import CallToActionButton from '../../components/CallToActionButton'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -96,7 +96,7 @@ const navigate = useNavigate()
         <div className="founder-text flex items-center justify-center px-8 py-16 md:py-0">
           <div className="max-w-md">
             <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
-              Samuel Juma Omondi
+              Samuel Omondi Juma
             </h2>
       <p className="mt-6 text-grey-200 leading-relaxed">
               Samuel founded Charity 4 A Course on a simple belief — that

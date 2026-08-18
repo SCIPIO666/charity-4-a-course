@@ -3,6 +3,51 @@ import Hero from './pageComponents/Hero'
 import Seo from './pageComponents/Seo'
 import { seoConfig } from '../router'
 export default function Bio() {
+
+      // useLayoutEffect(() => {
+      //   const ctx = gsap.context(() => {
+      //     gsap.fromTo('.founder-heading', 
+      //       { y: 30, opacity: 0 },
+      //       {
+      //         y: 0,
+      //         opacity: 1,
+      //         duration: 0.8,
+      //         ease: 'power3.out',
+      //         scrollTrigger: {
+      //           trigger: '.founder-heading',
+      //           start: 'top 85%',
+      //         }
+      //       }
+      //     )
+      //     gsap.fromTo('.founder-img', 
+      //       { x: -50, opacity: 0 },
+      //       {
+      //         x: 0,
+      //         opacity: 1,
+      //         duration: 1,
+      //         ease: 'power3.out',
+      //         scrollTrigger: {
+      //           trigger: '.founder-img',
+      //           start: 'top 80%',
+      //         }
+      //       }
+      //     )
+      //     gsap.fromTo('.founder-text', 
+      //       { x: 50, opacity: 0 },
+      //       {
+      //         x: 0,
+      //         opacity: 1,
+      //         duration: 1,
+      //         ease: 'power3.out',
+      //         scrollTrigger: {
+      //           trigger: '.founder-text',
+      //           start: 'top 80%',
+      //         }
+      //       }
+      //     )
+      //   }, sectionRef)
+      //   return () => ctx.revert()
+      // }, [])
   return (
     <div className="bg-teal-950">
       <Seo {...seoConfig.bio} />
@@ -24,7 +69,7 @@ export default function Bio() {
           {/* photo */}
           <div className="flex justify-center md:justify-start">
             <img
-              src="/heroBg/heroBio.jpg"
+              src="/heroBg/juma.jpeg"
               alt="Samuel Juma Omondi, Founder of Charity 4 A Course"
               className="w-full max-w-sm rounded-2xl border-4 border-teal-900 object-cover object-top aspect-[4/5] shadow-2xl"
             />
