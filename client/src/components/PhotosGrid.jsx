@@ -45,7 +45,10 @@ export default function PhotosGrid({ photos = [] }) {
           <img
             ref={(el) => (imageRefs.current[index] = el)}
             src={src}
-            alt=""
+            alt={`${index}-activity by Charity 4 A Course Kenya`}
+
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />
         </div>

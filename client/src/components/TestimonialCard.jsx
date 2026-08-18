@@ -48,6 +48,9 @@ export default function TestimonialCard({ name, role, review, rating, image,clas
           <img 
             src={image} 
             alt={name}
+
+              loading="lazy"
+              decoding="async"
             className="w-20 h-20 rounded-full object-cover border-2 border-teal-400/30"
           />
           <div>

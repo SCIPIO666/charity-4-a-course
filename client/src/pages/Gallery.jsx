@@ -70,6 +70,8 @@ export default function Gallery() {
                   <img
                     src={src}
                     alt={title}
+                      loading="lazy"
+                      decoding="async"
                     className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20" />

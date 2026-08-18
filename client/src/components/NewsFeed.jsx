@@ -24,6 +24,9 @@ function NewsCard({ post }) {
         <div className="aspect-[16/9] overflow-hidden mb-4">
           <img
             src={post.image}
+
+            loading="lazy"
+            decoding="async"
             alt=""
             className="h-full w-full object-cover"
           />

@@ -57,6 +57,9 @@ export default function PartnerCarousel({
               <img
                 src={partner.logo}
                 alt={partner.name}
+
+                loading="lazy"
+                decoding="async"
                 className="max-h-12 max-w-full object-contain filter brightness-95 opacity-80 hover:opacity-100 hover:brightness-110 transition-all duration-300"
               />
             ) : (
