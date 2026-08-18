@@ -81,31 +81,106 @@ export default function Bio() {
               Meet the Founder
             </span>
             <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
-              Samuel Juma Omondi
+              Samuel Omondi Juma
             </h2>
 
-            <div className="mt-6 flex flex-col gap-5 text-grey-200 leading-relaxed">
+           <div className="mt-6 flex flex-col gap-5 text-grey-200 leading-relaxed">
               <p>
-                Samuel Juma Omondi founded Charity 4 A Course on a simple
-                conviction: that lasting change comes from showing up
-                consistently, not from one-off gestures. Rather than waiting
-                for the ideal moment or ideal resources, he chose to start
-                small and stay committed — building an organisation measured
-                by whether it returns, again and again, to the communities
-                that need it most.
+                Samuel Omondi Juma is a Medical Laboratory Scientist specializing in 
+                Histopathology, with professional experience in diagnostic laboratory 
+                services and a strong passion for humanitarian and community development.
               </p>
+              
               <p>
-                Under his leadership, Charity 4 A Course has grown into a
-                non-governmental, non-profit organisation delivering
-                responsive, timely outreach across Kenya — from shared meals
-                to community outreach events — rooted in the belief that the
-                people it serves deserve dignity, not just charity.
+                His journey in healthcare and humanitarian service is rooted in the same 
+                conviction: every person deserves to be treated with dignity, compassion, 
+                and respect, regardless of their circumstances.
               </p>
+              
               <p>
-                Samuel continues to lead the organisation's outreach work
-                directly, staying close to the communities Charity 4 A
-                Course serves rather than stepping back into a purely
-                administrative role.
+                As a Medical Laboratory Scientist in Histopathology, Samuel works behind 
+                the scenes of patient care, where the accuracy, quality, and timely 
+                processing of tissue and cytology specimens contribute directly to 
+                diagnosis and clinical decision-making. Through histopathology, he has 
+                developed a deep appreciation of the human side of healthcare—recognizing 
+                that behind every specimen is a patient, a family, and a story.
+              </p>
+              
+              <p>
+                This experience has shaped his broader approach to service. It has taught 
+                him that meaningful impact is often created through small actions 
+                performed consistently, responsibly, and with purpose.
+              </p>
+              
+              <p>
+                It was this philosophy that contributed to the establishment of Charity 
+                4 A Course, a Kenyan non-governmental, non-profit organisation committed 
+                to improving the quality of life of less fortunate and underserved 
+                communities through responsive and timely outreach programmes.
+              </p>
+              
+              <p>
+                Through Charity 4 A Course, Samuel seeks to extend the values he practices 
+                in healthcare beyond the laboratory. His work includes supporting 
+                community outreach initiatives, providing shared meals, engaging with 
+                vulnerable communities, and mobilising support around identified 
+                community needs.
+              </p>
+              
+              <p>
+                His background in medical laboratory science has also influenced how he 
+                approaches humanitarian work. He believes that effective community 
+                service should not only respond to immediate needs but should also be 
+                guided by evidence, understanding of community needs, accountability, 
+                organization, and sustainable impact.
+              </p>
+              
+              <p>
+                In histopathology, Samuel is committed to quality and patient-centered 
+                diagnostic services. As a humanitarian, he applies the same principles 
+                of responsibility and compassion to community service. In both roles, 
+                his focus remains the same: to contribute meaningfully to improving 
+                people's lives.
+              </p>
+              
+              <p>
+                His professional journey has also given him an appreciation of the 
+                challenges faced by patients and families within healthcare systems, 
+                particularly those who may struggle with access to timely and quality 
+                services. This has strengthened his belief that healthcare professionals 
+                have an important role beyond their technical responsibilities—they can 
+                also become advocates for compassion, community wellbeing, health 
+                awareness, and social responsibility.
+              </p>
+              
+              <p>
+                As the founder of Charity 4 A Course, Samuel continues to remain 
+                directly involved in outreach activities rather than taking a purely 
+                administrative role. He believes that leadership in service requires 
+                showing up, listening, understanding, and taking action.
+              </p>
+              
+              <p>
+                His two areas of work — Histopathology and humanitarian service — are 
+                therefore connected by one central purpose: service to humanity.
+              </p>
+              
+              <p>
+                In the laboratory, he contributes to the diagnosis and management of 
+                disease through scientific accuracy and quality. In the community, he 
+                contributes through compassion, outreach, and practical support.
+              </p>
+              
+              <p>
+                Samuel's vision is to build a life and career where science, healthcare, 
+                leadership, and humanitarian service come together to create meaningful 
+                and lasting impact.
+              </p>
+              
+              <p className="font-bold text-teal-300 text-lg mt-4">
+                "Behind every specimen is a patient. Behind every community need is a 
+                human being. My purpose is to serve both with competence, compassion, 
+                and dignity."
               </p>
             </div>
           </div>
