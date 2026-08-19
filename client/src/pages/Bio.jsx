@@ -1,53 +1,56 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import Hero from './pageComponents/Hero'
 import Seo from './pageComponents/Seo'
 import { seoConfig } from '../router'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 export default function Bio() {
-
-      // useLayoutEffect(() => {
-      //   const ctx = gsap.context(() => {
-      //     gsap.fromTo('.founder-heading', 
-      //       { y: 30, opacity: 0 },
-      //       {
-      //         y: 0,
-      //         opacity: 1,
-      //         duration: 0.8,
-      //         ease: 'power3.out',
-      //         scrollTrigger: {
-      //           trigger: '.founder-heading',
-      //           start: 'top 85%',
-      //         }
-      //       }
-      //     )
-      //     gsap.fromTo('.founder-img', 
-      //       { x: -50, opacity: 0 },
-      //       {
-      //         x: 0,
-      //         opacity: 1,
-      //         duration: 1,
-      //         ease: 'power3.out',
-      //         scrollTrigger: {
-      //           trigger: '.founder-img',
-      //           start: 'top 80%',
-      //         }
-      //       }
-      //     )
-      //     gsap.fromTo('.founder-text', 
-      //       { x: 50, opacity: 0 },
-      //       {
-      //         x: 0,
-      //         opacity: 1,
-      //         duration: 1,
-      //         ease: 'power3.out',
-      //         scrollTrigger: {
-      //           trigger: '.founder-text',
-      //           start: 'top 80%',
-      //         }
-      //       }
-      //     )
-      //   }, sectionRef)
-      //   return () => ctx.revert()
-      // }, [])
+  const sectionRef = useRef(null)
+      useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+          gsap.fromTo('.founder-heading', 
+            { y: 30, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: '.founder-heading',
+                start: 'top 85%',
+              }
+            }
+          )
+          gsap.fromTo('.founder-img', 
+            { x: -50, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 1,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: '.founder-img',
+                start: 'top 80%',
+              }
+            }
+          )
+          gsap.fromTo('.founder-text', 
+            { x: 50, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 1,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: '.founder-text',
+                start: 'top 80%',
+              }
+            }
+          )
+        }, sectionRef)
+        return () => ctx.revert()
+      }, [])
   return (
     <div className="bg-teal-950">
       <Seo {...seoConfig.bio} />
@@ -63,7 +66,7 @@ export default function Bio() {
         target="#gallery"
       />
 
-      <section id="gallery" className="bg-teal-950 min-h-screen px-6 md:px-12 py-20">
+      <section ref={sectionRef} id="gallery" className="bg-teal-950 min-h-screen px-6 md:px-12 py-20">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[0.8fr_1fr] gap-12 md:gap-16 items-start">
 
           {/* photo */}
@@ -71,7 +74,7 @@ export default function Bio() {
             <img
               src="/heroBg/juma.jpeg"
               alt="Samuel Juma Omondi, Founder of Charity 4 A Course"
-              className="w-full max-w-sm rounded-2xl border-4 border-teal-900 object-cover object-top aspect-[4/5] shadow-2xl"
+              className="w-full founder-img max-w-sm rounded-2xl border-4 border-teal-900 object-cover object-top aspect-[4/5] shadow-2xl"
             />
           </div>
 
@@ -80,11 +83,11 @@ export default function Bio() {
             <span className="font-display text-xs font-bold tracking-widest uppercase text-teal-300">
               Meet the Founder
             </span>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h2 className="mt-4 founder-heading font-display text-3xl md:text-4xl font-bold text-white leading-tight">
               Samuel Omondi Juma
             </h2>
 
-           <div className="mt-6 flex flex-col gap-5 text-grey-200 leading-relaxed">
+           <div className="mt-6 flex flex-col gap-5 text-grey-200 leading-relaxed founder-text">
               <p>
                 Samuel Omondi Juma is a Medical Laboratory Scientist specializing in 
                 Histopathology, with professional experience in diagnostic laboratory 
