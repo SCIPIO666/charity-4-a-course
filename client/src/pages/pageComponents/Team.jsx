@@ -19,7 +19,7 @@ export default function Team() {
   
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading animation - fixed trigger selector
+
       gsap.fromTo('.team-heading',
         { y: 30, opacity: 0 },
         {
@@ -34,7 +34,6 @@ export default function Team() {
         }
       )
 
-      // Cards animation - fixed trigger selector
       gsap.fromTo('.team-card',
         { scale: 0.9, opacity: 0 },
         {
@@ -57,19 +56,19 @@ export default function Team() {
   return (
     <section ref={sectionRef} id="team" className="bg-ink-50 px-6 md:px-12 py-20">
       <div className="max-w-6xl mx-auto">
-        <div className="team-heading"> {/* Changed class name */}
+        <div className="team-heading"> 
           <span className="font-display text-xs font-bold tracking-widest uppercase text-teal-300">
             Meet the members in our leadership.
           </span>
           <Header text="Our Team"/>
         </div>
 
-        <div className="team-grid mt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"> {/* Added team-grid class */}
+        <div className="team-grid mt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"> 
           {TEAM.map((person) => (
             <Card 
               key={person.name} 
               variant="cool" 
-              className="team-card p-4 flex flex-col items-center text-center gap-3" // Changed to team-card
+              className="team-card p-4 flex flex-col items-center text-center gap-3" 
             >
               <img
                 src={person.photo}
