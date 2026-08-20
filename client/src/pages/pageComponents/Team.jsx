@@ -54,7 +54,7 @@ export default function Team() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="team" className="bg-ink-50 px-6 md:px-12 py-20">
+    <section ref={sectionRef} id="team" className="bg-teal-950 px-6 md:px-12 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="team-heading"> 
           <span className="font-display text-xs font-bold tracking-widest uppercase text-teal-300">
