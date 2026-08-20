@@ -3,6 +3,8 @@ import Hero from './pageComponents/Hero'
 import MissionVisionBanner from './pageComponents/MissionVisionBanner'
 import Seo from './pageComponents/Seo'
 import { seoConfig } from '../router'
+import History from './pageComponents/History'
+import Team from './pageComponents/Team'
 export default function WhoWeAre() {
   return (
     <div>
@@ -31,6 +33,9 @@ export default function WhoWeAre() {
           imageSource='/vision.jpg'
            layout = 'right'
         />
+
+        <History/>
+        <Team/>
       </section>      
     </div>
   )
