@@ -24,13 +24,13 @@ export default function WhoWeAre() {
         <MissionVisionBanner 
           heading='MISSION' 
           info='To improve the quality of life through compassion and commitment to uplifting communities  in Kenya'
-          imageSource='/about1.jpg'
+          imageSource='/heroBg/vision.jpg'
         />
         
         <MissionVisionBanner 
           heading='VISION' 
           info='A Kenya where every community thrives with dignity, opportunity, and sustainable development, creating lasting positive change for generations to come.'
-          imageSource='/vision.jpg'
+          imageSource='/heroBg/homeHer03.jpg'
            layout = 'right'
         />
 
