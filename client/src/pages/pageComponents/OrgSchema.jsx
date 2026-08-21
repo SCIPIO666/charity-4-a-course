@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://charity4acoursekenya.co.ke'
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://charity4acourse.co.ke'
 
 export default function OrgSchema() {
   const schema = {

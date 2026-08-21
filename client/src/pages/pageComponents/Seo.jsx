@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 const SITE_NAME = 'Charity 4 A Course'
-const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://charity4acourse.vercel.app'
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://charity4acourse.co.ke'
 const DEFAULT_IMAGE = `${SITE_URL}/og-cover.jpg` 
 
 // top of every page   
