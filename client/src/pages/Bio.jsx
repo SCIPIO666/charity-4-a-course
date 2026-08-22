@@ -59,7 +59,7 @@ export default function Bio() {
         heading="About The Founder"
         pattern="pattern3"
         imageAlt = 'founder image'
-        image={'/heroBg/shirtHero.jpg'}
+        image={'/heroBg/shirtHero.webp'}
         imagePosition="bg-center lg:bg-top"
         carousel={false}
         scrollArrow={true}
@@ -72,7 +72,7 @@ export default function Bio() {
           {/* photo */}
           <div className="flex justify-center md:justify-start">
             <img
-              src="/heroBg/juma.jpeg"
+              src="/heroBg/juma.webp"
               alt="Samuel Juma Omondi, Founder of Charity 4 A Course"
               className="w-full founder-img max-w-sm rounded-2xl border-4 border-teal-900 object-cover object-top aspect-[4/5] shadow-2xl"
             />

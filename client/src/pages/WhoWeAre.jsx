@@ -13,7 +13,7 @@ export default function WhoWeAre() {
         variant='outline'
         heading='About Us'
         pattern='pattern2'
-        image='/heroBg/mission.jpg'
+        image='/heroBg/mission.webp'
         imageAlt = 'about us banner image'
         carousel={false}
         scrollArrow={true}  
@@ -24,13 +24,13 @@ export default function WhoWeAre() {
         <MissionVisionBanner 
           heading='MISSION' 
           info='To improve the quality of life through compassion and commitment to uplifting communities  in Kenya'
-          imageSource='/heroBg/vision.jpg'
+          imageSource='/heroBg/vision.webp'
         />
         
         <MissionVisionBanner 
           heading='VISION' 
           info='A Kenya where every community thrives with dignity, opportunity, and sustainable development, creating lasting positive change for generations to come.'
-          imageSource='/heroBg/homeHer03.jpg'
+          imageSource='/heroBg/homeHer03.webp'
            layout = 'right'
         />
 

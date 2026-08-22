@@ -77,7 +77,7 @@ export default function SupportMethods() {
       </Card>
     )
   }
-const image='/heroBg/bg.jpg'
+const image='/heroBg/bg.webp'
   return (
     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 z-10 ">
             <div

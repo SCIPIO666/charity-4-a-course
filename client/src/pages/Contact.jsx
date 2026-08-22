@@ -101,7 +101,7 @@ useLayoutEffect(() => {
         pattern="pattern6"
         imageAlt = 'contact us banner image'
         carousel={false}
-        image='/heroBg/contactHero.jpg'
+        image='/heroBg/contactHero.webp'
         scrollArrow={true}
         target="#contact"
       />

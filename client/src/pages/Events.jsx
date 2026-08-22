@@ -12,7 +12,7 @@ export default function Events() {
         variant="outline"
         heading="Events"
         pattern="pattern1"
-        image='/heroBg/eventsHero.jpg'
+        image='/heroBg/eventsHero.webp'
         imageAlt = 'events banner image'
         carousel={false}
         scrollArrow={true}

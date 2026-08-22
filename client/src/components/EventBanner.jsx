@@ -81,7 +81,7 @@ export default function EventBanner() {
   const events = getUpcomingEvents()
   const sectionRef = useRef(null)
   const cardRefs = useRef([])
-  const image='/heroBg/bg.jpg'
+  const image='/heroBg/bg.webp'
   useLayoutEffect(() => {
     if (events.length === 0) return
 

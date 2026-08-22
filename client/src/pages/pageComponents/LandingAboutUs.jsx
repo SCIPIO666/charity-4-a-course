@@ -63,7 +63,7 @@ export default function LandingAboutUs() {
       {/* background photo */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="/about1.jpg"
+          src="/about1.webp"
           alt="Charity 4 A Course Outreach"
           loading="lazy"
           decoding="async"

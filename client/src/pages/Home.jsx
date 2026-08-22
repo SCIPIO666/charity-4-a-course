@@ -17,7 +17,7 @@ export default function Home() {
         pattern='pattern4'
         text='Support Us'
         imageAlt = 'home banner image'
-        image='/heroBg/homeHero.jpg'
+        image='/heroBg/homeHero.webp'
         scrollArrow={false} 
         heading='Improving Lives, One Community at a Time'
         carousel={true}

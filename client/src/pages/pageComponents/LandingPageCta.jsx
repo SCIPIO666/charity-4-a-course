@@ -40,7 +40,7 @@ export default function LandingPageCta({ cta = true, variant = 'full' }) {//full
   const sectionRef = useRef(null)
   const navigate = useNavigate()
   const compact = variant === 'compact'
-const image='/heroBg/pic.jpg'
+const image='/heroBg/pic.webp'
 
 
   useLayoutEffect(() => {

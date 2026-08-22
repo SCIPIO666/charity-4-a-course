@@ -1,9 +1,9 @@
 import React from 'react'
 
-import loop1 from '../../../public/loop1.jpg'
-import loop2 from '../../../public/loop2.jpg'
-import loop3 from '../../../public/loop3.jpg'
-import loop4 from '../../../public/loop4.jpg'
+import loop1 from '../../../public/loop1.webp'
+import loop2 from '../../../public/loop2.webp'
+import loop3 from '../../../public/loop3.webp'
+import loop4 from '../../../public/loop4.webp'
 
 const IMAGES = [
   loop1,

@@ -8,14 +8,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Heart, Users, Sparkles, ArrowRight, ShieldCheck, BookOpen, Utensils } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 const PROGRAMME_PHOTOS = [
-  { src: '/about1.jpg', title: 'Community Outreach', tag: 'Outreach' },
-  { src: '/loop1.jpg', title: 'Youth Empowerment', tag: 'Education' },
-  { src: '/about2.jpg', title: 'Skills Training', tag: 'Vocational' },
-  { src: '/loop2.jpg', title: 'Community Outreach', tag: 'Outreach' },
-  { src: '/about3.jpg', title: 'Healthcare Access', tag: 'Wellness' },
-  { src: '/loop3.jpg', title: 'Food & Nutrition', tag: 'Food Security' },
-  { src: '/about4.jpg', title: 'Community Outreach', tag: 'Outreach' },
-  { src: '/loop4.jpg', title: 'Food & Nutrition', tag: 'Food Security'  }
+  { src: '/about1.webp', title: 'Community Outreach', tag: 'Outreach' },
+  { src: '/loop1.webp', title: 'Youth Empowerment', tag: 'Education' },
+  { src: '/about2.webp', title: 'Skills Training', tag: 'Vocational' },
+  { src: '/loop2.webp', title: 'Community Outreach', tag: 'Outreach' },
+  { src: '/about3.webp', title: 'Healthcare Access', tag: 'Wellness' },
+  { src: '/loop3.webp', title: 'Food & Nutrition', tag: 'Food Security' },
+  { src: '/about4.webp', title: 'Community Outreach', tag: 'Outreach' },
+  { src: '/loop4.webp', title: 'Food & Nutrition', tag: 'Food Security'  }
 ]
 
 const KEY_PROGRAMMES = [

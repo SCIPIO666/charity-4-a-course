@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import founder from '../../../public/heroBg/juma.jpeg'
+import founder from '../../../public/heroBg/juma.webp'
 import CallToActionButton from '../../components/CallToActionButton'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

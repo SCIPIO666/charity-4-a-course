@@ -49,7 +49,7 @@ export default function Gallery() {
         variant="outline"
         heading="Gallery"
         pattern="pattern3"
-        image='/heroBg/gallery.jpg'
+        image='/heroBg/gallery.webp'
         imageAlt = 'gallery banner image'
         carousel={false}
         scrollArrow={true}

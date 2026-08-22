@@ -12,7 +12,7 @@ export default function News() {
         heading="News And Articles"
         pattern="pattern5"
         imageAlt = 'news and articles banner image'
-        image='/heroBg/newsHero.jpg'
+        image='/heroBg/newsHero.webp'
         carousel={false}
         scrollArrow={true}
         target="#news"
